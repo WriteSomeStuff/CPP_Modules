@@ -1,0 +1,18 @@
+# MacOS
+.DS_Store
+
+# VSCode
+.vscode
+
+# Debugging
+a.out.dSYM
+00.dSYM
+
+# Object Files
+*.o
+
+# Program
+a.out
+
+# Redirection files
+
