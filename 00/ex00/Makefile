@@ -6,12 +6,12 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/10/23 17:10:56 by cschabra      #+#    #+#                  #
-#    Updated: 2023/10/23 17:16:13 by cschabra      ########   odam.nl          #
+#    Updated: 2023/10/23 17:31:49 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= megaphone
-CC= cc
+CC= c++
 
 CFLAGS= -Wall -Werror -Wextra #-std=c++98
 

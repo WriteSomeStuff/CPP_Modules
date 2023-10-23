@@ -6,12 +6,12 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/10/23 17:10:56 by cschabra      #+#    #+#                  #
-#    Updated: 2023/10/23 17:25:15 by cschabra      ########   odam.nl          #
+#    Updated: 2023/10/23 17:32:03 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= tests
-CC= cc
+CC= c++
 
 CFLAGS= -Wall -Werror -Wextra #-std=c++98
 
