@@ -6,7 +6,7 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/10/23 17:10:56 by cschabra      #+#    #+#                  #
-#    Updated: 2023/10/24 13:53:53 by cschabra      ########   odam.nl          #
+#    Updated: 2023/10/24 17:22:05 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJS= ${SRCS:.cpp=.o}
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	@${CC} -o ${NAME} ${CFLAGS} ${SRCS}
+	${CC} -o ${NAME} ${CFLAGS} ${SRCS}
 
 clean:
 	@rm -f ${OBJS}
