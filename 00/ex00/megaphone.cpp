@@ -6,33 +6,31 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/23 17:16:33 by cschabra      #+#    #+#                 */
-/*   Updated: 2023/10/24 14:09:57 by cschabra      ########   odam.nl         */
+/*   Updated: 2023/10/24 17:14:26 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-// #include <string>
+#include <sstream>
+#include <cctype>
 
 void	ToUpperArray(char **argv)
 {
-	int		i;
-	int		j;
-	char	c;
+	std::stringstream str;
+	int	i (1); 
+	int	j (0);
 
-	i = 1;
-	j = 0;
 	while (argv[i])
 	{
 		while (argv[i][j])
 		{
-			c = toupper(argv[i][j]);
-			std::cout << c;
+			str << static_cast<char>(std::toupper(static_cast<unsigned char>(argv[i][j])));
 			j++;
 		}
 		j = 0;
 		i++;
 	}
-	std::cout << '\n';
+	std::cout << str.str() << '\n';
 }
 
 int	main(int argc, char **argv)
