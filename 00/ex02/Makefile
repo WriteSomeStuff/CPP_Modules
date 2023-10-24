@@ -6,17 +6,17 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/10/23 17:10:56 by cschabra      #+#    #+#                  #
-#    Updated: 2023/10/23 17:32:03 by cschabra      ########   odam.nl          #
+#    Updated: 2023/10/24 13:53:53 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= tests
 CC= c++
 
-CFLAGS= -Wall -Werror -Wextra #-std=c++98
+CFLAGS= -Wall -Werror -Wextra -std=c++98
 
-SRCS= ${shell find srcs -iname "*.c"}
-OBJS= ${SRCS:.c=.o}
+SRCS= ${shell find -iname "*.cpp"}
+OBJS= ${SRCS:.cpp=.o}
 
 all: ${NAME}
 
