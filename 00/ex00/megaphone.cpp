@@ -6,22 +6,33 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/23 17:16:33 by cschabra      #+#    #+#                 */
-/*   Updated: 2023/10/23 18:57:40 by cschabra      ########   odam.nl         */
+/*   Updated: 2023/10/24 13:52:35 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
-// makefile deletes this when make fclean, fix makefile
-bool	cmparrays(char **argv)
-{
-	std::string	ExpectedStr1 = "Damnit";
-	std::string	ExpectedStr2 = " ! ";
-	std::string	ExpectedStr3 = "Sorry students, I thought this thing was off.";
+// #include <string>
 
-	if (ExpectedStr1 == argv[1] && ExpectedStr2 == argv[2] && ExpectedStr3 == argv[3])
-		return (true);
-	return (false);
+void	capitalise(char **argv)
+{
+	int		i;
+	int		j;
+	char	c;
+
+	i = 1;
+	j = 0;
+	while (argv[i])
+	{
+		while (argv[i][j])
+		{
+			c = toupper(argv[i][j]);
+			std::cout << c;
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	std::cout << "\n";
 }
 
 int	main(int argc, char **argv)
@@ -30,8 +41,6 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-	else if (argv[1] ==  ExpectedStr)
-		std::cout << "SHHHHH... I THINK THE STUDENTS ARE ASLEEP...\n";
-	else if (cmparrays(argv) == true)
-		std::cout << "DAMNIT ! SORRY STUDENTS, I THOUGHT THIS THING WAS OFF.\n";
+	else
+		capitalise(argv);
 }

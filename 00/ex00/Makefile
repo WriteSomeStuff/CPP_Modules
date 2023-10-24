@@ -6,7 +6,7 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/10/23 17:10:56 by cschabra      #+#    #+#                  #
-#    Updated: 2023/10/23 18:22:55 by cschabra      ########   odam.nl          #
+#    Updated: 2023/10/24 13:31:51 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC= c++
 CFLAGS= -Wall -Werror -Wextra -std=c++98
 
 SRCS= ${shell find -iname "*.cpp"}
-OBJS= ${SRCS:.c=.o}
+OBJS= ${SRCS:.cpp=.o}
 
 all: ${NAME}
 
