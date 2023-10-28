@@ -10,3 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+
+# include <iostream>
+# include <string>
+// # include <sstream>
+// # include <cctype>
+
+class PhoneBook
+{
+	std::string Contacts[8];
+	class Contact
+	{
+		public:
+		std::string	FirstName;
+		std::string	LastName;
+		std::string	NickName;
+		std::string	PhoneNr;
+		std::string	Secret;
+	};
+};
+
+# endif
