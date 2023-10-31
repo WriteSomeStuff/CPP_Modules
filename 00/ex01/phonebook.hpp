@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/23 17:30:22 by cschabra      #+#    #+#                 */
-/*   Updated: 2023/10/30 18:47:53 by cschabra      ########   odam.nl         */
+/*   Updated: 2023/10/31 18:34:29 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,25 @@
 
 # include <iostream>
 # include <string>
-// # include <sstream>
-// # include <cctype>
+# include <iomanip>
+# include <sstream>
 
 class PhoneBook
 {
-	std::string Contacts[8];
+	public:
 	class Contact
 	{
 		public:
-		std::string	FirstName;
-		std::string	LastName;
-		std::string	NickName;
-		std::string	PhoneNr;
-		std::string	Secret;
+		std::string	first_name;
+		std::string	last_name;
+		std::string	nickname;
+		std::string	phone_nr;
+		std::string	secret;
+		Contact() : first_name(""), last_name(""), nickname(""), phone_nr(""), secret("") {}
 	};
+	Contact	contacts[8];
+	int		amount;
+	PhoneBook() : amount(0) {}
 };
 
 # endif
