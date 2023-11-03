@@ -14,11 +14,11 @@
 
 void	display_single_contact(PhoneBook& phonebook, int index)
 {
-	std::cout << "First name: " << phonebook.contacts[index].first_name << "\n";
-	std::cout << "Last name: " << phonebook.contacts[index].last_name << "\n";
-	std::cout << "Nickname: " << phonebook.contacts[index].nickname << "\n";
-	std::cout << "Phone number: " << phonebook.contacts[index].phone_nr << "\n";
-	std::cout << "Darkest secret: " << phonebook.contacts[index].secret << "\n";
+	std::cout << "First name: " << phonebook.contacts[index].first_name << '\n';
+	std::cout << "Last name: " << phonebook.contacts[index].last_name << '\n';
+	std::cout << "Nickname: " << phonebook.contacts[index].nickname << '\n';
+	std::cout << "Phone number: " << phonebook.contacts[index].phone_nr << '\n';
+	std::cout << "Darkest secret: " << phonebook.contacts[index].secret << '\n';
 }
 
 int	display_all_contacts(PhoneBook& phonebook, int index, int amount)
@@ -39,8 +39,10 @@ int	display_all_contacts(PhoneBook& phonebook, int index, int amount)
 		std::cout << std::setw(10) << (index + 1) << "|" \
 			<< std::setw(10) << fn << "|" \
 			<< std::setw(10) << ln << "|" \
-			<< std::setw(10) << nn << "\n";
+			<< std::setw(10) << nn << '\n';
 		index++;
+		if (amount == 1)
+			break ;
 	}
 	return (index);
 }
