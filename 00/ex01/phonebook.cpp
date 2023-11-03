@@ -14,18 +14,18 @@
 
 void	display_single_contact(PhoneBook& phonebook, int index)
 {
-	std::cout << "First name: " << phonebook.contacts[index].first_name << '\n';
-	std::cout << "Last name: " << phonebook.contacts[index].last_name << '\n';
-	std::cout << "Nickname: " << phonebook.contacts[index].nickname << '\n';
-	std::cout << "Phone number: " << phonebook.contacts[index].phone_nr << '\n';
-	std::cout << "Darkest secret: " << phonebook.contacts[index].secret << '\n';
+	std::cout << "First name: " << phonebook.contacts[index].first_name << \
+		"\nLast name: " << phonebook.contacts[index].last_name << \
+		"\nNickname: " << phonebook.contacts[index].nickname << \
+		"\nPhone number: " << phonebook.contacts[index].phone_nr << \
+		"\nDarkest secret: " << phonebook.contacts[index].secret << '\n';
 }
 
 int	display_all_contacts(PhoneBook& phonebook, int index, int amount)
 {
 	std::string	fn, ln, nn;
 
-	while (index <= amount)
+	while (index < amount)
 	{
 		fn = phonebook.contacts[index].first_name.substr(0, 10);
 		ln = phonebook.contacts[index].last_name.substr(0, 10);
@@ -41,8 +41,6 @@ int	display_all_contacts(PhoneBook& phonebook, int index, int amount)
 			<< std::setw(10) << ln << "|" \
 			<< std::setw(10) << nn << '\n';
 		index++;
-		if (amount == 1)
-			break ;
 	}
 	return (index);
 }
@@ -53,8 +51,8 @@ void	search_phonebook(PhoneBook& phonebook, int amount)
 	std::string	input;
 
 	std::cout << std::setw(10) << "Index" << "|" << std::setw(10) << "First Name" << "|" \
-		<< std::setw(10) << "Last Name" << "|" << std::setw(10) << "Nickname\n";
-	std::cout << "-------------------------------------------\n";
+		<< std::setw(10) << "Last Name" << "|" << std::setw(10) << "Nickname\n" \
+		<< "-------------------------------------------\n";
 	index = display_all_contacts(phonebook, index, amount);
 	std::cout << "Enter the index of the contact you want to see: ";
 	std::getline(std::cin, input);
@@ -88,6 +86,8 @@ void	start_up()
 
 	while (input != "EXIT")
 	{
+		std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" \
+			<< "Choose ADD, SEARCH or EXIT.\n";
 		std::getline(std::cin, input);
 		if (input == "ADD")
 		{
@@ -95,22 +95,27 @@ void	start_up()
 				i = 0;
 			store_input(phonebook, i);
 			i++;
-			if (phonebook.amount < 7)
+			if (phonebook.amount < 8)
 				phonebook.amount++;
 		}
 		else if (input == "SEARCH" && phonebook.amount > 0)
 			search_phonebook(phonebook, phonebook.amount);
 		else if (input == "SEARCH" && phonebook.amount == 0)
 			std::cout << "Still empty, add at least one contact.\n";
-		std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-		std::cout << "Choose ADD, SEARCH or EXIT.\n";
 	}
 	std::cout << "Buhbye!";
+}
+
+PhoneBook::Contact::Contact() : first_name(""), last_name(""), nickname(""), phone_nr(""), secret("")
+{
+}
+
+PhoneBook::PhoneBook() : amount(0)
+{
 }
 
 int	main(void)
 {
 	std::cout << "This phonebook is empty, please fill :)\n";
-	std::cout << "Choose ADD, SEARCH or EXIT.\n";
 	start_up();
 }

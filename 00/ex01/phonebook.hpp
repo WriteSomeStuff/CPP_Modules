@@ -29,11 +29,11 @@ class PhoneBook
 		std::string	nickname;
 		std::string	phone_nr;
 		std::string	secret;
-		Contact() : first_name(""), last_name(""), nickname(""), phone_nr(""), secret("") {}
+		Contact();
 	};
 	Contact	contacts[8];
 	int		amount;
-	PhoneBook() : amount(0) {}
+	PhoneBook();
 };
 
 # endif

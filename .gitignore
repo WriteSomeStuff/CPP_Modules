@@ -5,8 +5,7 @@
 .vscode
 
 # Debugging
-a.out.dSYM
-00.dSYM
+*.dSYM
 
 # Object Files
 *.o
