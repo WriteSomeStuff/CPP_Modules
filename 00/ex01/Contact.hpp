@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   phonebook.hpp                                      :+:    :+:            */
+/*   Contact.hpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/10/23 17:30:22 by cschabra      #+#    #+#                 */
-/*   Updated: 2023/10/31 18:34:29 by cschabra      ########   odam.nl         */
+/*   Created: 2023/11/20 13:14:54 by cschabra      #+#    #+#                 */
+/*   Updated: 2023/11/20 15:49:20 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <sstream>
+#include "PhoneBook.hpp"
 
-class PhoneBook
+class Contact
 {
+	private:
+	std::string	first_name;
+	std::string	last_name;
+	std::string	nickname;
+	std::string	phone_nr;
+	std::string	secret;
+
 	public:
-	class Contact
-	{
-		public:
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string	phone_nr;
-		std::string	secret;
-		Contact();
-	};
-	Contact	contacts[8];
-	int		amount;
-	PhoneBook();
+	void	display_single_contact(void);
+	void	display_all_contacts(int index);
+	void	store_input(void);
+	Contact();
 };
 
 # endif

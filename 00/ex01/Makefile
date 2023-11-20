@@ -6,7 +6,7 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/10/23 17:10:56 by cschabra      #+#    #+#                  #
-#    Updated: 2023/10/31 18:40:02 by cschabra      ########   odam.nl          #
+#    Updated: 2023/11/20 15:42:40 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ CC= c++
 
 CFLAGS= -Wall -Werror -Wextra -std=c++98
 
-SRCS= phonebook.cpp
+SRCS= PhoneBook.cpp \
+Contact.cpp
+
 OBJS= ${SRCS:.cpp=.o}
 
 all: ${NAME}
