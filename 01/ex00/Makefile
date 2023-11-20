@@ -6,22 +6,26 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/11/02 21:03:56 by cschabra      #+#    #+#                  #
-#    Updated: 2023/11/02 21:04:50 by cschabra      ########   odam.nl          #
+#    Updated: 2023/11/20 16:11:06 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 
+NAME= zombies
 CC= c++
 
 CFLAGS= -Wall -Werror -Wextra -std=c++98
 
-SRCS= 
+SRCS= main.cpp \
+newZombie.cpp \
+randomChump.cpp \
+Zombie.cpp
+
 OBJS= ${SRCS:.cpp=.o}
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	${CC} -o ${NAME} ${CFLAGS} ${SRCS}
+	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 
 clean:
 	@rm -f ${OBJS}
