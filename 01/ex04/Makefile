@@ -6,13 +6,13 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/11/02 21:03:56 by cschabra      #+#    #+#                  #
-#    Updated: 2023/11/21 16:32:03 by cschabra      ########   odam.nl          #
+#    Updated: 2023/11/21 17:06:00 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= 
 CC= c++
-CFLAGS= -Wall -Werror -Wextra -std=c++98
+CFLAGS= -Wall -Werror -Wextra -std=c++11
 
 SRCS= 
 
