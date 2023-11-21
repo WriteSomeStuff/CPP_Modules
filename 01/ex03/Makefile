@@ -6,7 +6,7 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/11/02 21:03:56 by cschabra      #+#    #+#                  #
-#    Updated: 2023/11/21 17:05:57 by cschabra      ########   odam.nl          #
+#    Updated: 2023/11/21 17:49:58 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,10 @@ NAME=
 CC= c++
 CFLAGS= -Wall -Werror -Wextra -std=c++11
 
-SRCS= 
+SRCS= HumanA.cpp \
+HumanB.cpp \
+main.cpp \
+Weapon.cpp
 
 OBJS= ${SRCS:%.cpp=%.o}
 
