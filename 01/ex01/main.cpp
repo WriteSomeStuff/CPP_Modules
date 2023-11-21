@@ -6,13 +6,17 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 16:09:05 by cschabra      #+#    #+#                 */
-/*   Updated: 2023/11/20 18:02:45 by cschabra      ########   odam.nl         */
+/*   Updated: 2023/11/21 16:35:37 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-// add own test
+void	test(Zombie *horde, int amount)
+{
+	for (size_t i = 0; i < amount; i++)
+		horde[i].announce();
+}
 
 int	main(void)
 {
@@ -23,11 +27,16 @@ int	main(void)
 	std::cout << "Enter the amount of zombies: ";
 	std::getline(std::cin, input);
 	std::stringstream ss(input);
-	if (!(ss >> amount) || amount < 1 || amount > INT32_MAX)
-		std::cout << "More than one and below max int please!\n";
+	if (!(ss >> amount) || amount < 1 || amount > 50000)
+	{
+		std::cout << "More than one and no higher than 50000!\n";
+		return (EXIT_FAILURE);
+	}
 	std::cout << "Enter the name of the horde: ";
 	std::getline(std::cin, input);
 	horde = zombieHorde(amount, input);
-	for (size_t i = 0; i < amount; i++)
-		delete horde; // check how to delete right, now its wrong
+	if (!horde)
+		return (EXIT_FAILURE);
+	test(horde, amount);
+	delete[] horde;
 }
