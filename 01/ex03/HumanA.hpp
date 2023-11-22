@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/21 17:30:20 by cschabra      #+#    #+#                 */
-/*   Updated: 2023/11/21 18:10:21 by cschabra      ########   odam.nl         */
+/*   Updated: 2023/11/22 14:45:36 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 class HumanA
 {
 	private:
-	Weapon		_weapon;
 	std::string	_name;
+	Weapon		&_weapon;
 
 	public:
 	void	attack();
-	HumanA();
+	HumanA(std::string name, Weapon& weapon);
 	~HumanA();
 };
 

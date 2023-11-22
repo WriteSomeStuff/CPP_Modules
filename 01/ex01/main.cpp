@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 16:09:05 by cschabra      #+#    #+#                 */
-/*   Updated: 2023/11/21 16:35:37 by cschabra      ########   odam.nl         */
+/*   Updated: 2023/11/22 13:15:19 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	test(Zombie *horde, int amount)
 {
-	for (size_t i = 0; i < amount; i++)
+	for (int i = 0; i < amount; i++)
 		horde[i].announce();
 }
 

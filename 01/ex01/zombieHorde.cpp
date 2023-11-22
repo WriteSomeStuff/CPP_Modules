@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 17:28:04 by cschabra      #+#    #+#                 */
-/*   Updated: 2023/11/21 16:33:26 by cschabra      ########   odam.nl         */
+/*   Updated: 2023/11/22 13:15:03 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Zombie*	zombieHorde(int N, std::string name)
 		std::cerr << ex.what() << '\n';
 		return (NULL);
 	}
-	for (size_t i = 0; i < N; i++)
+	for (int i = 0; i < N; i++)
 		horde[i].setName(name);
 	return (horde);
 }

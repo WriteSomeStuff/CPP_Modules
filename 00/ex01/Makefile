@@ -6,7 +6,7 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/10/23 17:10:56 by cschabra      #+#    #+#                  #
-#    Updated: 2023/11/21 16:38:18 by cschabra      ########   odam.nl          #
+#    Updated: 2023/11/22 13:10:52 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ all: ${NAME}
 ${NAME}: ${OBJS}
 	${CC} ${OBJS} ${CFLAGS} -o ${NAME}
 
-%.o : %.c
+%.o : %.cpp
 	$(CC) $(CFLAGS) -c -o $@ $^
 
 clean:

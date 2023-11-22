@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/21 17:30:28 by cschabra      #+#    #+#                 */
-/*   Updated: 2023/11/21 18:04:07 by cschabra      ########   odam.nl         */
+/*   Updated: 2023/11/22 14:41:08 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ void	Weapon::setType(std::string type)
 }
 
 Weapon::Weapon()
+{
+}
+
+Weapon::Weapon(std::string type) : _type(type)
 {
 }
 
