@@ -10,11 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 
+NAME= replace
 CC= c++
 CFLAGS= -Wall -Werror -Wextra -std=c++11
 
-SRCS= 
+SRCS= main.cpp \
+Replace.cpp
 
 OBJS= ${SRCS:%.cpp=%.o}
 
