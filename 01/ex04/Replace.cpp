@@ -18,7 +18,7 @@ bool	Replace::handleFile()
 		std::cerr << "Couldn't create destination file..\n";
 		return (false);
 	}
-	while (getline(srcFile, str))
+	while (std::getline(srcFile, str))
 	{
 		destFile << str;
         if (!srcFile.eof())
