@@ -1,30 +1,58 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Replace.cpp                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/12/20 17:51:57 by cschabra      #+#    #+#                 */
+/*   Updated: 2023/12/21 18:13:30 by cschabra      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Replace.hpp"
 
-bool	Replace::handleFile()
+bool	Replace::openFiles(std::ifstream *srcFile, std::ofstream *destFile)
 {
-	std::string		str;
-	std::ifstream	srcFile;
-	std::ofstream	destFile;
-
-	srcFile.open(_fileName.c_str(), std::ios::in);
-	if (srcFile.fail())
+	srcFile->open(_fileName.c_str(), std::ios::in);
+	if (srcFile->fail())
 	{
-		std::cerr << "Couldn't open source file.. Make one first :)\n";
+		std::cerr << "Couldn't open source file.. Check the name :)\n";
 		return (false);
 	}
-	destFile.open("copy", std::ios::out);
-	if (destFile.fail())
+	_fileName.insert(_fileName.length(), ".replace");
+	destFile->open(_fileName, std::ios::out);
+	if (destFile->fail())
 	{
 		std::cerr << "Couldn't create destination file..\n";
 		return (false);
 	}
+	return (true);
+}
+
+bool	Replace::handleFile()
+{
+	std::string			str;
+	std::ifstream		srcFile;
+	std::ofstream		destFile;
+	std::size_t			pos (0);
+
+	if (!openFiles(&srcFile, &destFile))
+		return (false);
 	while (std::getline(srcFile, str))
 	{
+		while (1)
+		{
+			pos = str.find(_s1);
+			if (pos == std::string::npos)
+				break ;
+			str.erase(pos, _s1.length());
+			str.insert(pos, _s2);
+		}
 		destFile << str;
-        if (!srcFile.eof())
-            destFile << '\n';
+		if (!srcFile.eof())
+			destFile << '\n';
 	}
-	// replace all occurences of s1 with s2
 	std::cout << "Done\n";
 	srcFile.close();
 	destFile.close();
