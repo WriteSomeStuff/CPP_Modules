@@ -6,15 +6,16 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/11/02 21:03:56 by cschabra      #+#    #+#                  #
-#    Updated: 2023/11/22 13:10:52 by cschabra      ########   odam.nl          #
+#    Updated: 2023/12/28 14:25:42 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 
+NAME= harl
 CC= c++
 CFLAGS= -Wall -Werror -Wextra -std=c++11
 
-SRCS= 
+SRCS= main.cpp \
+Harl.cpp
 
 OBJS= ${SRCS:%.cpp=%.o}
 

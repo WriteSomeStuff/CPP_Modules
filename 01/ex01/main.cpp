@@ -6,13 +6,13 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 16:09:05 by cschabra      #+#    #+#                 */
-/*   Updated: 2023/11/22 13:15:19 by cschabra      ########   odam.nl         */
+/*   Updated: 2023/12/28 14:46:19 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void	test(Zombie *horde, int amount)
+static void	test(Zombie *horde, int amount)
 {
 	for (int i = 0; i < amount; i++)
 		horde[i].announce();

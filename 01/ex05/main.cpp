@@ -5,31 +5,26 @@
 /*                                                     +:+                    */
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/11/21 17:30:14 by cschabra      #+#    #+#                 */
-/*   Updated: 2023/12/28 14:48:26 by cschabra      ########   odam.nl         */
+/*   Created: 2023/12/28 14:26:17 by cschabra      #+#    #+#                 */
+/*   Updated: 2023/12/28 14:43:17 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#include "Harl.hpp"
 
-int main()
+static bool	checkInput()
 {
+	
+}
+
+int	main(int argc, char **argv)
+{
+	Harl	harl;
+
+	if (argc < 2 || argc > 2 || !checkInput())
 	{
-		Weapon	club = Weapon("crude spiked club");
-		HumanA	bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
+		std::cout << "wrong input";
+		return (EXIT_FAILURE);
 	}
-	{
-		Weapon	club = Weapon("crude spiked club");
-		HumanB	jim("Jim");
-		jim.attack();
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
+	harl.complain("eke");
 }
