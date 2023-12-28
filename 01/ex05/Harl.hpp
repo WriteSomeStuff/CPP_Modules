@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 14:26:14 by cschabra      #+#    #+#                 */
-/*   Updated: 2023/12/28 14:31:49 by cschabra      ########   odam.nl         */
+/*   Updated: 2023/12/28 16:12:29 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Harl
 
 	public:
 	void	complain( std::string level );
-	Harl(/* args */);
+	Harl();
 	~Harl();
 };
 
