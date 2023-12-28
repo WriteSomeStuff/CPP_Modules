@@ -6,16 +6,15 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/11/02 21:03:56 by cschabra      #+#    #+#                  #
-#    Updated: 2023/12/28 16:20:32 by cschabra      ########   odam.nl          #
+#    Updated: 2023/12/28 16:46:18 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= harlFilter
+NAME= 
 CC= c++
 CFLAGS= -Wall -Werror -Wextra -std=c++11
 
-SRCS= main.cpp \
-Harl.cpp
+SRCS= 
 
 OBJS= ${SRCS:%.cpp=%.o}
 
