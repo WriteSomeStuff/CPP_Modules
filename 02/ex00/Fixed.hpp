@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   FixedNumber.hpp                                    :+:    :+:            */
+/*   Fixed.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/24 15:08:23 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/01/25 17:21:09 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/01/25 17:25:22 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXEDNUMBER_HPP
-# define FIXEDNUMBER_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
 #include <string>

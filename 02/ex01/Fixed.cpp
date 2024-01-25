@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   FixedNumber.cpp                                    :+:    :+:            */
+/*   Fixed.cpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/01/24 15:08:17 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/01/25 17:09:46 by cschabra      ########   odam.nl         */
+/*   Created: 2024/01/24 17:08:17 by cschabra      #+#    #+#                 */
+/*   Updated: 2024/01/25 17:27:51 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FixedNumber.hpp"
+#include "Fixed.hpp"
 
 void	Fixed::setRawBits( int const raw )
 {
