@@ -26,10 +26,18 @@ class Fixed
 	public:
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );
+	float	toFloat( void ) const;
+	int		toInt( void ) const;
+
+	Fixed&			operator=(const Fixed& fn);
+
 	Fixed();
 	Fixed(const Fixed& fn);
-	Fixed& operator=(const Fixed& fn);
+	Fixed(const int& nr);
+	Fixed(const float& nr);
 	~Fixed();
 };
+
+std::ostream&	operator<<(std::ostream& co, const Fixed& fn);
 
 #endif
