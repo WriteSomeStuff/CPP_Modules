@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/24 15:08:17 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/01/25 17:41:53 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/01/30 16:08:46 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,16 @@ int	Fixed::getRawBits( void ) const
 	return (_value);
 }
 
+//	convert fixed-point value to a floating point value
 float	Fixed::toFloat( void ) const
 {
-	float	res (0.0f);
-	return (res);
-	// call the toInt function
-	// divide the nr by 2^n
-	// if fixed point value < 0 convert back from two's complement??
-
-	//	convert fixed point value to a floating point value
+	return (static_cast<float>(getRawBits()) / (1 << _fractionalBits));
 }
 
+//	convert fixed-point value to an int
 int	Fixed::toInt( void ) const
 {
-	return(this->getRawBits() >> (_fractionalBits - 1));
+	return(this->getRawBits() / ( 1 << _fractionalBits));
 }
 
 Fixed::Fixed()
@@ -50,23 +46,18 @@ Fixed::Fixed(const Fixed& fn)
 	*this = fn;
 }
 
+// convert the nr to corresponding fixed-point value
 Fixed::Fixed(const int& nr)
 {
 	std::cout << "Int constructor called\n";
-	this->setRawBits(nr << (_fractionalBits - 1));
-
-	// convert the nr to corresponding fixed point value
+	this->setRawBits(nr << _fractionalBits);
 }
 
+// convert the nr to corresponding fixed-point value after rounding it
 Fixed::Fixed(const float& nr)
 {
 	std::cout << "Float constructor called\n";
-	this->setRawBits(nr);
-	// multiply by 2^fractionalbits
-	// round to nearest int (roundf)
-	// if float nr is negative take two's complement of value at step 2
-
-	// convert the nr to corresponding fixed-point value
+	this->setRawBits(std::roundf(nr * (1 << _fractionalBits)));
 }
 
 Fixed&	Fixed::operator=(const Fixed& fn)
@@ -77,11 +68,11 @@ Fixed&	Fixed::operator=(const Fixed& fn)
 	return (*this);
 }
 
+// insert floating point representation of fixed point nr to output stream parameter
 std::ostream&	operator<<(std::ostream& co, const Fixed& fn)
 {
-	co << fn.getRawBits();
+	co << fn.toFloat();
 	return (co);
-	// insert floating point representation of fixed point nr to output stream parameter
 }
 
 Fixed::~Fixed()
