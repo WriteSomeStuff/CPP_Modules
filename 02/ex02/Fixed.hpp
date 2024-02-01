@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/24 15:08:23 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/01/30 17:55:11 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/01 18:04:02 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ class Fixed
 	bool				operator==(const Fixed& fn);
 	bool				operator!=(const Fixed& fn);
 
-	int					operator+(const Fixed& fn);
-	int					operator-(const Fixed& fn);
-	int					operator*(const Fixed& fn);
-	int					operator/(const Fixed& fn);
+	Fixed				operator+(const Fixed& fn);
+	Fixed				operator-(const Fixed& fn);
+	Fixed				operator*(const Fixed& fn);
+	Fixed				operator/(const Fixed& fn);
 
 	Fixed&				operator--();
 	Fixed				operator--(int);

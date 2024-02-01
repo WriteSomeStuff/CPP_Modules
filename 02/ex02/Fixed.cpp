@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/24 15:08:17 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/01/30 17:55:21 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/01 18:05:08 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,48 +116,60 @@ bool	Fixed::operator!=(const Fixed& fn)
 	return (false);
 }
 
-int	Fixed::operator+(const Fixed& fn)
+Fixed	Fixed::operator+(const Fixed& fn)
 {
-	return (this->getRawBits() + fn.getRawBits());
+	Fixed	tmp(this->toFloat() + fn.toFloat());
+
+	return (tmp);
 }
 
-int	Fixed::operator-(const Fixed& fn)
+Fixed	Fixed::operator-(const Fixed& fn)
 {
-	return (this->getRawBits() - fn.getRawBits());
+	Fixed	tmp(this->toFloat() - fn.toFloat());
+
+	return (tmp);
 }
 
-int	Fixed::operator*(const Fixed& fn)
+Fixed	Fixed::operator*(const Fixed& fn)
 {
-	return (this->getRawBits() * fn.getRawBits());
+	Fixed	tmp(this->toFloat() * fn.toFloat());
+
+	return (tmp);
 }
 
-int	Fixed::operator/(const Fixed& fn)
+Fixed	Fixed::operator/(const Fixed& fn)
 {
-	return (this->getRawBits() / fn.getRawBits());
+	Fixed	tmp(this->toFloat() / fn.toFloat());
+
+	return (tmp);
 }
 
 Fixed&	Fixed::operator--()
 {
-	// do sumfin
+	this->setRawBits(this->getRawBits() - 1);
 	return (*this);
 }
 
 Fixed	Fixed::operator--(int)
 {
-	// do sumfin
-	return (*this);
+	Fixed	tmp(*this);
+
+	this->setRawBits(this->getRawBits() - 1);
+	return (tmp);
 }
 
 Fixed&	Fixed::operator++()
 {
-	// do sumfin
+	this->setRawBits(this->getRawBits() + 1);
 	return (*this);
 }
 
 Fixed	Fixed::operator++(int)
 {
-	// do sumfin
-	return (*this);
+	Fixed	tmp(*this);
+
+	this->setRawBits(this->getRawBits() + 1);
+	return (tmp);
 }
 
 Fixed&	Fixed::min(Fixed& fn1, Fixed& fn2)
@@ -186,5 +198,4 @@ const Fixed&	Fixed::max(const Fixed& fn1, const Fixed& fn2)
 	if (fn1 > fn2)
 		return (fn1);
 	return (fn2);
-	// do sumfin
 }
