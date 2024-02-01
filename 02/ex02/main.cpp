@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/24 15:07:57 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/01 17:42:46 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/01 18:19:19 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main(void)
 {
 	Fixed		a;
+	Fixed		f;
 	Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
 
 
@@ -34,7 +35,12 @@ int	main(void)
 	std::cout << d << std::endl;
 	std::cout << e << std::endl;
 
-	
+	std::cout << f << std::endl;
+	std::cout << ++f << std::endl;
+	std::cout << --f << std::endl;
+	std::cout << --f << std::endl;
+	std::cout << --f << std::endl;
+	std::cout << f * d << std::endl;
 
 	return 0;
 }
