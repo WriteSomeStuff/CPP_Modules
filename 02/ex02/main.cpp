@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/24 15:07:57 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/01 18:19:19 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/05 15:06:16 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(void)
 	std::cout << --f << std::endl;
 	std::cout << --f << std::endl;
 	std::cout << --f << std::endl;
-	std::cout << f * d << std::endl;
+	std::cout << f * b << std::endl;
 
 	return 0;
 }
