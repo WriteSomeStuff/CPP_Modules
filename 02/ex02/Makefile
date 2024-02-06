@@ -6,7 +6,7 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/01/24 15:07:57 by cschabra      #+#    #+#                  #
-#    Updated: 2024/01/25 17:44:45 by cschabra      ########   odam.nl          #
+#    Updated: 2024/02/06 12:40:38 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CC= c++
 CFLAGS= -Wall -Werror -Wextra -std=c++11
 
 SRCS= Fixed.cpp \
+Operators.cpp \
 main.cpp
 
 OBJS= ${SRCS:%.cpp=%.o}
