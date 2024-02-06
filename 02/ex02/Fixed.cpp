@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/24 15:08:17 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/06 12:39:43 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/06 15:36:11 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ Fixed::Fixed(const Fixed& fn)
 	*this = fn;
 }
 
-// convert the nr to corresponding fixed-point value
+//	convert the nr to corresponding fixed-point value
 Fixed::Fixed(const int& nr)
 {
 	this->setRawBits(nr << _fractionalBits);
 }
 
-// convert the nr to corresponding fixed-point value after rounding it
+//	convert the nr to corresponding fixed-point value after rounding it
 Fixed::Fixed(const float& nr)
 {
 	this->setRawBits(std::roundf(nr * (1 << _fractionalBits)));

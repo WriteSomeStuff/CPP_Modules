@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/06 12:38:30 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/06 12:40:04 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/06 15:36:16 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Fixed&	Fixed::operator=(const Fixed& fn)
 	return (*this);
 }
 
-// insert floating point representation of fixed point nr to output stream parameter
+//	insert floating point representation of fixed point nr to output stream parameter
 std::ostream&	operator<<(std::ostream& co, const Fixed& fn)
 {
 	co << fn.toFloat();

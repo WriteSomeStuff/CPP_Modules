@@ -6,13 +6,13 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/06 13:07:14 by cschabra      #+#    #+#                 */
-/*   Updated: 2023/12/21 18:11:02 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/06 15:35:55 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Replace.hpp"
 
-// input example: ./replace test.txt replaceme >:C
+//	input example: ./replace test.txt replaceme >:C
 int main(int argc, char **argv)
 {
 	std::string	fileName;

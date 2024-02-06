@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/24 15:08:17 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/06 11:41:42 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/06 15:36:05 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ Fixed::Fixed(const Fixed& fn)
 	*this = fn;
 }
 
-// convert the nr to corresponding fixed-point value
+//	convert the nr to corresponding fixed-point value
 Fixed::Fixed(const int& nr)
 {
 	std::cout << "Int constructor called\n";
 	this->setRawBits(nr << _fractionalBits);
 }
 
-// convert the nr to corresponding fixed-point value after rounding it
+//	convert the nr to corresponding fixed-point value after rounding it
 Fixed::Fixed(const float& nr)
 {
 	std::cout << "Float constructor called\n";
@@ -70,7 +70,7 @@ Fixed&	Fixed::operator=(const Fixed& fn)
 	return (*this);
 }
 
-// insert floating point representation of fixed point nr to output stream parameter
+//	insert floating point representation of fixed point nr to output stream parameter
 std::ostream&	operator<<(std::ostream& co, const Fixed& fn)
 {
 	co << fn.toFloat();
