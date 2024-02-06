@@ -6,11 +6,13 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/24 15:08:17 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/01/25 17:41:53 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/06 11:41:38 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int Fixed::_fractionalBits = 8;
 
 void	Fixed::setRawBits( int const raw )
 {

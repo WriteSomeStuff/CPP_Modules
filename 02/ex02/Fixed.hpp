@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/24 15:08:23 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/01 18:04:02 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/06 11:41:17 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Fixed
 {
 	private:
 	int					_value;
-	static const int	_fractionalBits = 8;
+	static const int	_fractionalBits;
 
 	public:
 	int		getRawBits( void ) const;
