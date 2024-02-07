@@ -5,12 +5,13 @@
 /*                                                     +:+                    */
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/05 16:18:59 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/07 12:24:31 by cschabra      ########   odam.nl         */
+/*   Created: 2024/02/07 12:42:32 by cschabra      #+#    #+#                 */
+/*   Updated: 2024/02/07 12:42:59 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 void	currentState(ClapTrap& robot1, ClapTrap& robot2)
 {

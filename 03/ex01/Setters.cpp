@@ -5,12 +5,13 @@
 /*                                                     +:+                    */
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/05 16:43:50 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/07 12:44:59 by cschabra      ########   odam.nl         */
+/*   Created: 2024/02/07 11:55:57 by cschabra      #+#    #+#                 */
+/*   Updated: 2024/02/07 12:50:37 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 void	ClapTrap::setName(const std::string& name)
 {

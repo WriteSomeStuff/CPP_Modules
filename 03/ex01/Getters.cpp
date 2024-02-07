@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Setters.cpp                                        :+:    :+:            */
+/*   Getters.cpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/05 16:43:50 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/07 12:44:59 by cschabra      ########   odam.nl         */
+/*   Created: 2024/02/07 11:55:42 by cschabra      #+#    #+#                 */
+/*   Updated: 2024/02/07 12:50:44 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-void	ClapTrap::setName(const std::string& name)
+std::string	ClapTrap::getName() const
 {
-	_name = name;
+	return (_name);
 }
 
-void	ClapTrap::setHp(const int hp)
+int	ClapTrap::getHp() const
 {
-	_hp = hp;
+	return (_hp);
 }
 
-void	ClapTrap::setMp(const int mp)
+int	ClapTrap::getMp() const
 {
-	_mp = mp;
+	return (_mp);
 }
 
-void	ClapTrap::setDamage(const int damage)
+int	ClapTrap::getDamage() const
 {
-	_damage = damage;
+	return (_damage);
 }

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ClapTrap.hpp                                       :+:    :+:            */
+/*   ScavTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/05 16:18:41 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/07 11:03:53 by cschabra      ########   odam.nl         */
+/*   Created: 2024/02/07 12:31:40 by cschabra      #+#    #+#                 */
+/*   Updated: 2024/02/07 12:57:39 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 #include <iostream>
 #include <string>
+#include "ClapTrap.hpp"
 
-class ClapTrap
+class ScavTrap : public ClapTrap
 {
 	private:
 	std::string			_name;
@@ -26,24 +27,13 @@ class ClapTrap
 
 	public:
 	void		attack(const std::string& target);
-	void		takeDamage(unsigned int amount);
-	void		beRepaired(unsigned int amount);
 
-	ClapTrap();
-	ClapTrap(const std::string& name);
-	ClapTrap(const ClapTrap& ct);
-	ClapTrap& operator=(const ClapTrap& ct);
-	~ClapTrap();
-	
-	std::string	getName() const;
-	int			getHp() const;
-	int			getMp() const;
-	int			getDamage() const;
+	ScavTrap();
+	ScavTrap(const std::string& name);
+	ScavTrap(const ScavTrap& ct);
+	ScavTrap& operator=(const ScavTrap& ct);
+	~ScavTrap();
 
-	void		setName(const std::string& name);
-	void		setHp(const int hp);
-	void		setMp(const int mp);
-	void		setDamage(const int damage);
 };
 
 #endif
