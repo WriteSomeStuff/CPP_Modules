@@ -6,16 +6,20 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/02/05 16:14:39 by cschabra      #+#    #+#                  #
-#    Updated: 2024/02/05 16:14:59 by cschabra      ########   odam.nl          #
+#    Updated: 2024/02/08 14:09:47 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= claptrap
+NAME= fragtrap
 CC= c++
 CFLAGS= -Wall -Werror -Wextra -std=c++11
 
 SRCS= ClapTrap.cpp \
-main.cpp
+FragTrap.cpp \
+Getters.cpp \
+main.cpp \
+ScavTrap.cpp \
+Setters.cpp
 
 OBJS= ${SRCS:%.cpp=%.o}
 

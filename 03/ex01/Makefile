@@ -6,11 +6,11 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/02/07 11:55:53 by cschabra      #+#    #+#                  #
-#    Updated: 2024/02/07 12:32:42 by cschabra      ########   odam.nl          #
+#    Updated: 2024/02/08 14:02:36 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= claptrap
+NAME= scavtrap
 CC= c++
 CFLAGS= -Wall -Werror -Wextra -std=c++11
 

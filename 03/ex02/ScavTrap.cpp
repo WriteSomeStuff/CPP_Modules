@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/07 12:31:38 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/08 12:08:03 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/08 14:14:26 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ScavTrap::attack(const std::string& target)
 
 void	ScavTrap::guardGate()
 {
-	std::cout << this->getName() << " is now in gatekeeper mode!\n";
+	std::cout << this->getName() << " is now in gatekeeper mode (and gave Lexus a high five)!\n";
 }
 
 ScavTrap::ScavTrap()

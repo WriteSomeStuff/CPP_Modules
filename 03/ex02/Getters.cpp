@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.hpp                                       :+:    :+:            */
+/*   Getters.cpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/07 12:31:40 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/08 13:42:41 by cschabra      ########   odam.nl         */
+/*   Created: 2024/02/07 11:55:42 by cschabra      #+#    #+#                 */
+/*   Updated: 2024/02/07 12:50:44 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-
-#include <iostream>
-#include <string>
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-class ScavTrap : public ClapTrap
+std::string	ClapTrap::getName() const
 {
-	private:
+	return (_name);
+}
 
-	public:
-	void		attack(const std::string& target);
-	void		guardGate();
+int	ClapTrap::getHp() const
+{
+	return (_hp);
+}
 
-	ScavTrap();
-	ScavTrap(const std::string& name);
-	ScavTrap(const ScavTrap& ct);
-	ScavTrap& operator=(const ScavTrap& ct);
-	~ScavTrap();
-};
+int	ClapTrap::getMp() const
+{
+	return (_mp);
+}
 
-#endif
+int	ClapTrap::getDamage() const
+{
+	return (_damage);
+}

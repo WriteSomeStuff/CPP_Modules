@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.hpp                                       :+:    :+:            */
+/*   Setters.cpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/07 12:31:40 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/08 13:42:41 by cschabra      ########   odam.nl         */
+/*   Created: 2024/02/07 11:55:57 by cschabra      #+#    #+#                 */
+/*   Updated: 2024/02/07 12:50:37 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-
-#include <iostream>
-#include <string>
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-class ScavTrap : public ClapTrap
+void	ClapTrap::setName(const std::string& name)
 {
-	private:
+	_name = name;
+}
 
-	public:
-	void		attack(const std::string& target);
-	void		guardGate();
+void	ClapTrap::setHp(const int hp)
+{
+	_hp = hp;
+}
 
-	ScavTrap();
-	ScavTrap(const std::string& name);
-	ScavTrap(const ScavTrap& ct);
-	ScavTrap& operator=(const ScavTrap& ct);
-	~ScavTrap();
-};
+void	ClapTrap::setMp(const int mp)
+{
+	_mp = mp;
+}
 
-#endif
+void	ClapTrap::setDamage(const int damage)
+{
+	_damage = damage;
+}
