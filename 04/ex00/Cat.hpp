@@ -1,0 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Cat.hpp                                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/02/13 13:46:50 by cschabra      #+#    #+#                 */
+/*   Updated: 2024/02/13 14:14:15 by cschabra      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CAT_HPP
+# define CAT_HPP
+
+#include <iostream>
+#include <string>
+#include "Animal.hpp"
+
+class Cat : public Animal
+{
+	private:
+
+	public:
+	Cat();
+	Cat(const Cat& Cat);
+	Cat&	operator=(const Cat& Cat);
+	~Cat();
+};
+
+#endif
