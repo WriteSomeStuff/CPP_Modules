@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Animal.hpp                                         :+:    :+:            */
+/*   WrongAnimal.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:46:50 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/13 14:28:03 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/13 14:14:15 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include <iostream>
 #include <string>
 
-class Animal
+class WrongAnimal
 {
 	protected:
 	std::string	_type;
@@ -26,10 +26,10 @@ class Animal
 	std::string		getType() const;
 	void			setType(const std::string& type);
 
-	Animal();
-	Animal(const Animal& Animal);
-	Animal&	operator=(const Animal& Animal);
-	virtual	~Animal();
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal& WrongAnimal);
+	WrongAnimal&	operator=(const WrongAnimal& WrongAnimal);
+	virtual	~WrongAnimal();
 };
 
 #endif

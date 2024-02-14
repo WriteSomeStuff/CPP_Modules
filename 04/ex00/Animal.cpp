@@ -14,17 +14,7 @@
 
 void	Animal::makeSound() const
 {
-	std::cout << this->getType() << " says " << this->getSound() << '\n';
-}
-
-std::string	Animal::getSound() const
-{
-	return (_sound);
-}
-
-void	Animal::setSound(const std::string& sound)
-{
-	_sound = sound;
+	std::cout << "What am I?\n";
 }
 
 std::string	Animal::getType() const
@@ -51,10 +41,7 @@ Animal&	Animal::operator=(const Animal& animal)
 {
 	std::cout << "Animal copy assignment operator called\n";
 	if (this != &animal)
-	{
 		this->setType(animal.getType());
-		this->setSound(animal.getSound());
-	}
 	return (*this);
 }
 

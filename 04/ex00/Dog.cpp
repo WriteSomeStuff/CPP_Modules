@@ -12,11 +12,15 @@
 
 #include "Dog.hpp"
 
-Dog::Dog()
+void	Dog::makeSound() const
+{
+	std::cout << this->_sound << '\n';
+}
+
+Dog::Dog() : _sound("Woof")
 {
 	std::cout << "Dog default constructor called\n";
 	this->setType("Dog");
-	this->setSound("woof");
 }
 Dog::Dog(const Dog& dog)
 {
@@ -28,10 +32,7 @@ Dog&	Dog::operator=(const Dog& dog)
 {
 	std::cout << "Dog copy assignment operator called\n";
 	if (this != &dog)
-	{
 		this->setType(dog.getType());
-		this->setSound(dog.getSound());
-	}
 	return (*this);
 }
 

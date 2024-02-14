@@ -20,8 +20,10 @@
 class Cat : public Animal
 {
 	private:
+	std::string	_sound;
 
 	public:
+	void	makeSound() const;
 	Cat();
 	Cat(const Cat& Cat);
 	Cat&	operator=(const Cat& Cat);

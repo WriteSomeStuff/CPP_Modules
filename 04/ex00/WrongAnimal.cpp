@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Cat.cpp                                            :+:    :+:            */
+/*   WrongAnimal.cpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
@@ -10,33 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongAnimal.hpp"
 
-void	Cat::makeSound() const
+void	WrongAnimal::makeSound() const
 {
-	std::cout << this->_sound << '\n';
+	std::cout << "Quack\n";
 }
 
-Cat::Cat() : _sound("Meow")
+std::string	WrongAnimal::getType() const
 {
-	std::cout << "Cat default constructor called\n";
-	this->setType("Cat");
-}
-Cat::Cat(const Cat& cat)
-{
-	std::cout << "Cat copy constructor called\n";
-	*this = cat;
+	return (_type);
 }
 
-Cat&	Cat::operator=(const Cat& cat)
+void	WrongAnimal::setType(const std::string& type)
 {
-	std::cout << "Cat copy assignment operator called\n";
-	if (this != &cat)
-		this->setType(cat.getType());
+	_type = type;
+}
+
+WrongAnimal::WrongAnimal()
+{
+	std::cout << "WrongAnimal default constructor called\n";
+}
+WrongAnimal::WrongAnimal(const WrongAnimal& Wronganimal)
+{
+	std::cout << "WrongAnimal copy constructor called\n";
+	*this = Wronganimal;
+}
+
+WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& Wronganimal)
+{
+	std::cout << "WrongAnimal copy assignment operator called\n";
+	if (this != &Wronganimal)
+		this->setType(Wronganimal.getType());
 	return (*this);
 }
 
-Cat::~Cat()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Cat destructor called\n";
+	std::cout << "WrongAnimal destructor called\n";
 }
