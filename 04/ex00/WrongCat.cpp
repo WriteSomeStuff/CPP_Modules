@@ -17,17 +17,20 @@ WrongCat::WrongCat()
 	std::cout << "WrongCat default constructor called\n";
 	this->setType("WrongCat");
 }
-WrongCat::WrongCat(const WrongCat& Wrongcat)
+WrongCat::WrongCat(const WrongCat& wrongCat)
 {
 	std::cout << "WrongCat copy constructor called\n";
-	*this = Wrongcat;
+	*this = wrongCat;
 }
 
-WrongCat&	WrongCat::operator=(const WrongCat& Wrongcat)
+WrongCat&	WrongCat::operator=(const WrongCat& wrongCat)
 {
 	std::cout << "WrongCat copy assignment operator called\n";
-	if (this != &Wrongcat)
-		this->setType(Wrongcat.getType());
+	if (this != &wrongCat)
+	{
+		this->setType(wrongCat.getType());
+		this->_sound = wrongCat._sound;
+	}
 	return (*this);
 }
 
