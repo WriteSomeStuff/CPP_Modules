@@ -36,6 +36,7 @@ Dog&	Dog::operator=(const Dog& dog)
 		this->setType(dog.getType());
 		this->_sound = dog._sound;
 	}
+	return (*this);
 }
 
 Dog::~Dog()
