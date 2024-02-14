@@ -22,5 +22,17 @@ int main()
 	delete(i);
 	delete(j);
 
+	Animal*	animalArray[100];
+
+	for (int i = 0; i < 100; i++)
+	{
+		if (i < 50)
+			animalArray[i] = new Dog();
+		else
+			animalArray[i] = new Cat();
+
+	}
+	for (int i = 0; i < 100; i++)
+		delete animalArray[i];
 	return 0;
 }
