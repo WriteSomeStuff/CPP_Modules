@@ -22,6 +22,7 @@ class Dog : public Animal, public Brain
 {
 	private:
 	std::string	_sound;
+	Brain*		_brain;
 
 	public:
 	void	makeSound() const;

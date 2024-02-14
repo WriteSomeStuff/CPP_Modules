@@ -31,6 +31,7 @@ Animal::Animal()
 {
 	std::cout << "Animal default constructor called\n";
 }
+
 Animal::Animal(const Animal& animal)
 {
 	std::cout << "Animal copy constructor called\n";

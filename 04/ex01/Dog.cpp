@@ -20,8 +20,10 @@ void	Dog::makeSound() const
 Dog::Dog() : _sound("Woof")
 {
 	std::cout << "Dog default constructor called\n";
+	this->_brain = new(Brain);
 	this->setType("Dog");
 }
+
 Dog::Dog(const Dog& dog)
 {
 	std::cout << "Dog copy constructor called\n";
@@ -42,4 +44,5 @@ Dog&	Dog::operator=(const Dog& dog)
 Dog::~Dog()
 {
 	std::cout << "Dog destructor called\n";
+	delete[](this->_brain);
 }

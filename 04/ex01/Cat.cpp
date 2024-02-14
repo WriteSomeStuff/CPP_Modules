@@ -20,8 +20,10 @@ void	Cat::makeSound() const
 Cat::Cat() : _sound("Meow")
 {
 	std::cout << "Cat default constructor called\n";
+	this->_brain = new(Brain); 
 	this->setType("Cat");
 }
+
 Cat::Cat(const Cat& cat)
 {
 	std::cout << "Cat copy constructor called\n";
@@ -42,4 +44,5 @@ Cat&	Cat::operator=(const Cat& cat)
 Cat::~Cat()
 {
 	std::cout << "Cat destructor called\n";
+	delete[](this->_brain);
 }
