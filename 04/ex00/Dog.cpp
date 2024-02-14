@@ -22,6 +22,7 @@ Dog::Dog() : _sound("Woof")
 	std::cout << "Dog default constructor called\n";
 	this->setType("Dog");
 }
+
 Dog::Dog(const Dog& dog)
 {
 	std::cout << "Dog copy constructor called\n";

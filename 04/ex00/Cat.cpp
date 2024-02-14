@@ -22,6 +22,7 @@ Cat::Cat() : _sound("Meow")
 	std::cout << "Cat default constructor called\n";
 	this->setType("Cat");
 }
+
 Cat::Cat(const Cat& cat)
 {
 	std::cout << "Cat copy constructor called\n";
