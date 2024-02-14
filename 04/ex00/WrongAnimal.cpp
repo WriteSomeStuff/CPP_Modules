@@ -31,6 +31,7 @@ WrongAnimal::WrongAnimal()
 {
 	std::cout << "WrongAnimal default constructor called\n";
 }
+
 WrongAnimal::WrongAnimal(const WrongAnimal& Wronganimal)
 {
 	std::cout << "WrongAnimal copy constructor called\n";

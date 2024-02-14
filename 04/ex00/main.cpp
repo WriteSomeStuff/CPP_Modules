@@ -38,4 +38,3 @@ int main()
 	delete(w);
 	return 0;
 }
-

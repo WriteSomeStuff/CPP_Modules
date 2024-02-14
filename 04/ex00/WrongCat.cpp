@@ -17,6 +17,7 @@ WrongCat::WrongCat()
 	std::cout << "WrongCat default constructor called\n";
 	this->setType("WrongCat");
 }
+
 WrongCat::WrongCat(const WrongCat& wrongCat)
 {
 	std::cout << "WrongCat copy constructor called\n";
