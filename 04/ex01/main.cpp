@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:52:22 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/15 17:02:24 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/15 17:16:24 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main()
 
 	delete(i);
 	delete(j);
+	std::cout << "------------------------------------------\n";
 
 	Animal*	animalArray[4];
 
@@ -32,6 +33,7 @@ int main()
 			animalArray[i] = new Cat();
 
 	}
+	std::cout << "------------------------------------------\n";
 	for (int i = 0; i < 4; i++)
 		delete animalArray[i];
 	return 0;
