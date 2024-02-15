@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:51:52 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/13 14:35:11 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/15 17:02:11 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ Dog&	Dog::operator=(const Dog& dog)
 
 Dog::~Dog()
 {
-	std::cout << "Dog destructor called\n";
 	delete(this->_brain);
+	std::cout << "Dog destructor called\n";
 }

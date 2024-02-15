@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:51:49 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/13 14:35:08 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/15 17:02:06 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ Cat&	Cat::operator=(const Cat& cat)
 
 Cat::~Cat()
 {
-	std::cout << "Cat destructor called\n";
 	delete(this->_brain);
+	std::cout << "Cat destructor called\n";
 }

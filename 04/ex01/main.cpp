@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:52:22 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/13 14:34:35 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/15 17:02:24 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ int main()
 	delete(i);
 	delete(j);
 
-	Animal*	animalArray[100];
+	Animal*	animalArray[4];
 
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 4; i++)
 	{
-		if (i < 50)
+		if (i < 2)
 			animalArray[i] = new Dog();
 		else
 			animalArray[i] = new Cat();
 
 	}
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 4; i++)
 		delete animalArray[i];
 	return 0;
 }
