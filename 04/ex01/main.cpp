@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:52:22 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/15 17:16:24 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/19 17:22:33 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ int main()
 {
 	const Animal*	j = new Dog();
 	const Animal*	i = new Cat();
+	std::cout << "General test------------------------------\n";
 
 	delete(i);
 	delete(j);
-	std::cout << "------------------------------------------\n";
+	std::cout << "Array test--------------------------------\n";
 
 	Animal*	animalArray[4];
 
@@ -34,7 +35,35 @@ int main()
 
 	}
 	std::cout << "------------------------------------------\n";
+
 	for (int i = 0; i < 4; i++)
 		delete animalArray[i];
+	std::cout << "Cat deep copy test------------------------\n";
+
+	Cat	c = Cat();
+	Cat	d(c);
+
+	std::cout << "------------------------------------------\n";
+
+	std::cout << c.getType() << '\n';
+	std::cout << d.getType() << '\n';
+	d.setType("Clouded leopard");
+	std::cout << c.getType() << '\n';
+	std::cout << d.getType() << '\n';
+	std::cout << "Dog deep copy test------------------------\n";
+
+	Dog	q = Dog();
+	Dog	z(q);
+
+	std::cout << "------------------------------------------\n";
+
+	std::cout << q.getType() << '\n';
+	std::cout << z.getType() << '\n';
+	z.setType("Saarlooswolfdog");
+	std::cout << q.getType() << '\n';
+	std::cout << z.getType() << '\n';
+	
+	std::cout << "------------------------------------------\n";
+
 	return 0;
 }
