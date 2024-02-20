@@ -6,11 +6,11 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/02/05 16:14:39 by cschabra      #+#    #+#                  #
-#    Updated: 2024/02/09 15:14:08 by cschabra      ########   odam.nl          #
+#    Updated: 2024/02/20 16:24:49 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= fragtrap
+NAME= diamondtrap
 CC= c++
 CFLAGS= -Wall -Werror -Wextra -std=c++11
 
