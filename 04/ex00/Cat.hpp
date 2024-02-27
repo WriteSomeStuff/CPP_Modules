@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:46:50 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/22 14:43:08 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/27 14:51:30 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Cat : public Animal
 	Cat();
 	Cat(const Cat& Cat);
 	Cat&	operator=(const Cat& Cat);
-	~Cat();
+	virtual	~Cat();
 };
 
 #endif
