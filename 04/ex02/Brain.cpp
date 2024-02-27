@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/14 13:46:50 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/14 14:28:03 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/27 14:33:43 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 Brain::Brain()
 {
 	std::cout << "Brain default constructor called\n";
+	for (int i = 0; i < 100; i++)
+	{
+		this->_ideas[i] = "Food!";
+		std::cout << i << ": " << this->_ideas[i] << '\n';
+	}
 }
 
 Brain::Brain(const Brain& b)
