@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:46:50 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/15 17:13:45 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/27 13:36:06 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ class Dog : public Animal
 	Brain*		_brain;
 
 	public:
-	void	makeSound() const;
+	void		makeSound() const;
+	std::string	getSound() const;
+	void		setSound(const std::string& sound);
+
 	Dog();
 	Dog(const Dog& dog);
 	Dog&	operator=(const Dog& dog);

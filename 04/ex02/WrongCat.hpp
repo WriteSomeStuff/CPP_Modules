@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:46:50 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/13 14:14:15 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/27 13:32:28 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 class WrongCat : public WrongAnimal
 {
 	private:
-	std::string	_sound;
 
 	public:
 	WrongCat();

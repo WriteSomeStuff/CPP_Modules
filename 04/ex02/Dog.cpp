@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:51:52 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/19 16:34:59 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/27 13:38:43 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,31 @@
 
 void	Dog::makeSound() const
 {
-	std::cout << this->_sound << '\n';
+	std::cout << this->getSound() << '\n';
 }
 
-Dog::Dog() : _sound("Woof")
+std::string	Dog::getSound() const
+{
+	return (_sound);
+}
+
+void	Dog::setSound(const std::string& sound)
+{
+	_sound = sound;
+}
+
+Dog::Dog()
 {
 	std::cout << "Dog default constructor called\n";
 	this->_brain = new Brain();
 	this->setType("Dog");
+	this->setSound("Woof");
 }
 
 Dog::Dog(const Dog& dog) : Animal()
 {
-	setType(dog.getType());
-	_sound = dog._sound;
+	this->setType(dog.getType());
+	this->setSound(dog.getSound());
 	_brain = new Brain(*dog._brain);
 	std::cout << "Dog copy constructor called\n";
 	*this = dog;
@@ -39,7 +50,7 @@ Dog&	Dog::operator=(const Dog& dog)
 	if (this != &dog)
 	{
 		this->setType(dog.getType());
-		this->_sound = dog._sound;
+		this->setSound(dog.getSound());
 	}
 	return (*this);
 }

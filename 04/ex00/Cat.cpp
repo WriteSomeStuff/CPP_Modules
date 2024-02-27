@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:51:49 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/13 14:35:08 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/27 13:18:54 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,24 @@
 
 void	Cat::makeSound() const
 {
-	std::cout << this->_sound << '\n';
+	std::cout << this->getSound() << '\n';
 }
 
-Cat::Cat() : _sound("Meow")
+std::string	Cat::getSound() const
+{
+	return (_sound);
+}
+
+void	Cat::setSound(const std::string& sound)
+{
+	_sound = sound;
+}
+
+Cat::Cat()
 {
 	std::cout << "Cat default constructor called\n";
 	this->setType("Cat");
+	this->setSound("Meow");
 }
 
 Cat::Cat(const Cat& cat)
@@ -35,7 +46,7 @@ Cat&	Cat::operator=(const Cat& cat)
 	if (this != &cat)
 	{
 		this->setType(cat.getType());
-		this->_sound = cat._sound;
+		this->setSound(cat.getSound());
 	}
 	return (*this);
 }

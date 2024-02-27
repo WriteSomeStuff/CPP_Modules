@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:51:49 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/13 14:35:08 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/27 13:25:42 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ WrongCat&	WrongCat::operator=(const WrongCat& wrongCat)
 {
 	std::cout << "WrongCat copy assignment operator called\n";
 	if (this != &wrongCat)
-	{
 		this->setType(wrongCat.getType());
-		this->_sound = wrongCat._sound;
-	}
 	return (*this);
 }
 

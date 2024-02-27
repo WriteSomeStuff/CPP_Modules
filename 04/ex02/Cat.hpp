@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:46:50 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/15 17:13:41 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/27 13:35:56 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ class Cat : public Animal
 	Brain*		_brain;
 
 	public:
-	void	makeSound() const;
+	void		makeSound() const;
+	std::string	getSound() const;
+	void		setSound(const std::string& sound);
+
 	Cat();
 	Cat(const Cat& Cat);
 	Cat&	operator=(const Cat& Cat);
