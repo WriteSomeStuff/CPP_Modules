@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:46:50 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/27 14:51:37 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/28 17:59:48 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class WrongCat : public WrongAnimal
 	WrongCat();
 	WrongCat(const WrongCat& WrongCat);
 	WrongCat&	operator=(const WrongCat& WrongCat);
-	virtual	~WrongCat();
+	~WrongCat();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/13 13:46:50 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/02/27 14:51:46 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/02/28 18:00:13 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Dog : public Animal
 	Dog();
 	Dog(const Dog& dog);
 	Dog&	operator=(const Dog& dog);
-	virtual	~Dog();
+	~Dog();
 };
 
 #endif
