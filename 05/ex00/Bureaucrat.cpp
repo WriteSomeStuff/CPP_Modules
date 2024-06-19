@@ -23,6 +23,11 @@ void	Bureaucrat::setGrade(int grade)
 	_grade = grade;
 }
 
+std::string	Bureaucrat::getName() const
+{
+	return (_name);
+}
+
 int	Bureaucrat::getGrade() const
 {
 	return (_grade);
@@ -56,11 +61,6 @@ void	Bureaucrat::decrementGrade()
 	}
 }
 
-std::string	Bureaucrat::getName() const
-{
-	return (_name);
-}
-
 Bureaucrat::GradeTooHighException::GradeTooHighException() : out_of_range("Bureaucrat grade too high")
 {
 }
@@ -81,7 +81,7 @@ Bureaucrat::Bureaucrat(const std::string& name, const int grade) : _name(name)
 	}
 }
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : _name("No name"), _grade(150)
 {
 	std::cout << "Default constructor called\n";
 }

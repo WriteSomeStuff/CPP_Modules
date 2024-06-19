@@ -25,16 +25,10 @@ class Bureaucrat
 
 	public:
 	void		setGrade(int grade);
-	int			getGrade() const;
 	std::string	getName() const;
+	int			getGrade() const;
 	void		incrementGrade();
 	void		decrementGrade();
-
-	Bureaucrat();
-	Bureaucrat(const Bureaucrat& Bureaucrat);
-	Bureaucrat(const std::string& name, const int grade);
-	Bureaucrat&	operator=(const Bureaucrat& Bureaucrat);
-	~Bureaucrat();
 
 	class	GradeTooHighException : public std::out_of_range
 	{
@@ -47,6 +41,12 @@ class Bureaucrat
 		public:
 		GradeTooLowException();
 	};
+
+	Bureaucrat();
+	Bureaucrat(const Bureaucrat& Bureaucrat);
+	Bureaucrat(const std::string& name, const int grade);
+	Bureaucrat&	operator=(const Bureaucrat& Bureaucrat);
+	~Bureaucrat();
 };
 
 std::ostream&	operator<<(std::ostream& co, const Bureaucrat& bureaucrat);
