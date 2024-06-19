@@ -15,26 +15,38 @@
 
 #include <iostream>
 #include <string>
+#include <exception>
 
 class Bureaucrat
 {
-	protected:
+	private:
 	const std::string	_name;
 	int					_grade;
 
 	public:
-
 	void		setGrade(int grade);
-	int			getGrade();
-	std::string	getName();
+	int			getGrade() const;
+	std::string	getName() const;
 	void		incrementGrade();
 	void		decrementGrade();
 
-	Bureaucrat(const std::string name);
+	Bureaucrat();
 	Bureaucrat(const Bureaucrat& Bureaucrat);
+	Bureaucrat(const std::string& name, const int grade);
 	Bureaucrat&	operator=(const Bureaucrat& Bureaucrat);
-	virtual	~Bureaucrat();
+	~Bureaucrat();
 
+	class	GradeTooHighException : public std::out_of_range
+	{
+		public:
+		GradeTooHighException();
+	};
+
+	class	GradeTooLowException : public std::out_of_range
+	{
+		public:
+		GradeTooLowException();
+	};
 };
 
 std::ostream&	operator<<(std::ostream& co, const Bureaucrat& bureaucrat);
