@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/09 14:10:53 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/05/10 12:39:01 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/06/25 16:55:44 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ class Bureaucrat
 	void		incrementGrade();
 	void		decrementGrade();
 
-	class	GradeTooHighException : public std::out_of_range
+	class	GradeTooHighException : public std::exception
 	{
 		public:
-		GradeTooHighException();
+		const char* what() const throw();
 	};
 
-	class	GradeTooLowException : public std::out_of_range
+	class	GradeTooLowException : public std::exception
 	{
 		public:
-		GradeTooLowException();
+		const char* what() const throw();
 	};
 
 	Bureaucrat();
