@@ -6,15 +6,16 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/02/13 13:46:15 by cschabra      #+#    #+#                  #
-#    Updated: 2024/05/09 14:16:01 by cschabra      ########   odam.nl          #
+#    Updated: 2024/07/02 13:19:11 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 
+NAME= bureaucrat
 CC= c++
 CFLAGS= -Wall -Werror -Wextra -std=c++11
 
-SRCS= 
+SRCS= Bureaucrat.cpp \
+main.cpp \
 
 OBJS= ${SRCS:%.cpp=%.o}
 

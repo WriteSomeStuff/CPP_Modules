@@ -33,7 +33,7 @@ class Fixed
 
 	Fixed();
 	Fixed(const Fixed& fn);
-	Fixed(const int& nr);
+	Fixed(const int nr);
 	Fixed(const float& nr);
 	~Fixed();
 };

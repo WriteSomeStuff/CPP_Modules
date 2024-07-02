@@ -47,7 +47,7 @@ Fixed::Fixed(const Fixed& fn)
 }
 
 //	convert the nr to corresponding fixed-point value
-Fixed::Fixed(const int& nr)
+Fixed::Fixed(const int nr)
 {
 	this->setRawBits(nr << _fractionalBits);
 }
