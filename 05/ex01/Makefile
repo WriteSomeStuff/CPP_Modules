@@ -15,6 +15,7 @@ CC= c++
 CFLAGS= -Wall -Werror -Wextra -std=c++11
 
 SRCS= Bureaucrat.cpp \
+Form.cpp \
 main.cpp \
 
 OBJS= ${SRCS:%.cpp=%.o}

@@ -11,15 +11,12 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 // Grade ranges from 1 (highest possible grade) to 150 (lowest possible grade).
 // Constructing, incrementing or decrementing out of range should throw an error.
 void	Bureaucrat::setGrade(const int grade)
 {
-	if (grade < 1)
-		throw GradeTooHighException();
-	if (grade > 150)
-		throw GradeTooLowException();
 	_grade = grade;
 }
 
@@ -33,32 +30,31 @@ int	Bureaucrat::getGrade() const
 	return (_grade);
 }
 
-void	Bureaucrat::incrementGrade()
+void	Bureaucrat::signForm(Form& form)
 {
 	try
 	{
-		if (_grade == 1)
-			throw GradeTooHighException();
-		_grade--;
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << '\n';
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "Increment error: " << e.what() << '\n';
+		std::cerr << this->getName() << " couldn't sign " << form.getName() << " because " << e.what();
 	}
+}
+
+void	Bureaucrat::incrementGrade()
+{
+	if (_grade == 1)
+		throw GradeTooHighException();
+	_grade--;
 }
 
 void	Bureaucrat::decrementGrade()
 {
-	try
-	{
-		if (_grade == 150)
-			throw GradeTooLowException();
-		_grade++;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "Decrement error: " << e.what() << '\n';
-	}
+	if (_grade == 150)
+		throw GradeTooLowException();
+	_grade++;
 }
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
@@ -73,14 +69,11 @@ const char*	Bureaucrat::GradeTooLowException::what() const throw()
 
 Bureaucrat::Bureaucrat(const std::string& name, const int grade) : _name(name)
 {
-	try
-	{
-		this->setGrade(grade);
-	}
-	catch (std::exception& e)
-	{
-		std::cerr << "Construct error: " << e.what() << '\n';
-	}
+	if (grade < 0)
+		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
+	this->setGrade(grade);
 }
 
 Bureaucrat::Bureaucrat() : _name("No name"), _grade(150)
@@ -109,5 +102,5 @@ std::ostream&	operator<<(std::ostream& co, const Bureaucrat& bureaucrat)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Destructor called\n";
+	// std::cout << "Destructor called\n";
 }

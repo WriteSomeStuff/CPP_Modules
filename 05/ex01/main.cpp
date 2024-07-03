@@ -10,45 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main()
 {
-	Bureaucrat	a("Lillia", 1);
-	Bureaucrat	b("Smolder", 150);
-	Bureaucrat	c("Gnar", 66);
-	std::cout << "----------------------------------------------------\n";
+	try
+	{
+		Bureaucrat	a("Lillia", 1);
+		Bureaucrat	b("Smolder", 150);
+		Bureaucrat	c("Gnar", 66);
+		Form	d("Contract", 1, 2);
+		Form	f("Cheque", 150, 150);
+		Form	g("Consent form", 50, 20);
 
-	std::cout << a;
-	std::cout << b;
-	std::cout << c;
-	std::cout << "----------------------------------------------------\n";
-
-	Bureaucrat	d("Warwick", 0);
-	Bureaucrat	e("Nami", -1);
-	Bureaucrat	f("Ahri", 157);
-	std::cout << "----------------------------------------------------\n";
-	a.incrementGrade();
-	std::cout << a;
-	a.decrementGrade();
-	std::cout << a;
-	b.decrementGrade();
-	std::cout << b;
-	b.incrementGrade();
-	std::cout << b;
-	c.incrementGrade();
-	std::cout << c;
-	c.decrementGrade();
-	std::cout << c;
-	std::cout << "----------------------------------------------------\n";
-
-	// Bureaucrat	h;
-	// std::cout << h;
-
-	// Bureaucrat	g(a);
-	// std::cout << g;
-
-	// g = h;
-	// std::cout << g;
-	// std::cout << "----------------------------------------------------\n";
+		std::cout << d;
+		a.signForm(d);
+		b.signForm(f);
+		c.signForm(g);
+		std::cout << d;
+		std::cout << f;
+		std::cout << g;
+		std::cout << "----------------------------------------------------\n";
+		Form	h("Error", 0, 150);
+		std::cout << h;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error on construction: " << e.what();
+	}
 }

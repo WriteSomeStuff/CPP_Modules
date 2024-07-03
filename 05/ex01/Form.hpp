@@ -15,6 +15,8 @@
 
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class	Form
 {
 	private:
@@ -29,7 +31,6 @@ class	Form
 	void		setIsSigned(const bool& isSigned);
 	int			getGradeToSign() const;
 	int			getGradeToExecute() const;
-	void		signForm();
 	void		beSigned(const Bureaucrat& bureaucrat);
 
 	class	GradeTooHighException : public std::exception

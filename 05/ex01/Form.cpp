@@ -29,27 +29,29 @@ bool	Form::getIsSigned() const
 
 int	Form::getGradeToSign() const
 {
+	if (_gradeToSign < 1)
+		throw GradeTooHighException();
+	if (_gradeToSign > 150)
+		throw GradeTooLowException();
 	return(_gradeToSign);
 }
 
 int	Form::getGradeToExecute() const
 {
+	if (_gradeToExecute < 1)
+		throw GradeTooHighException();
+	if (_gradeToExecute > 150)
+		throw GradeTooLowException();
 	return(_gradeToExecute);
-}
-
-void	Form::signForm()
-{
-//	it will print something like:
-//	<bureaucrat> signed <form>
-//	Otherwise, it will print something like:
-//	<bureaucrat> couldn’t sign <form> because <reason>.
 }
 
 // Changes the form status to signed if the bureaucrat’s grade is high enough.
 // Higher or equal to the required one. If the grade is too low, throw a Form::GradeTooLowException.
 void	Form::beSigned(const Bureaucrat& bureaucrat)
 {
-
+	if (bureaucrat.getGrade() > this->getGradeToSign())
+		throw GradeTooLowException();
+	this->setIsSigned(true);
 }
 
 const char*	Form::GradeTooHighException::what() const throw()
@@ -64,6 +66,10 @@ const char*	Form::GradeTooLowException::what() const throw()
 
 Form::Form(const std::string& name, const int gradeToSign, const int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
+	if (this->getGradeToExecute() < 0 || this->getGradeToSign() < 0)
+		throw GradeTooHighException();
+	if (this->getGradeToExecute() > 150 || this->getGradeToSign() > 150)
+		throw GradeTooLowException();
 }
 
 Form::Form() : _name("No form name"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150)
@@ -95,5 +101,5 @@ std::ostream&	operator<<(std::ostream& co, const Form& form)
 
 Form::~Form()
 {
-	std::cout << "Destructor called\n";
+	// std::cout << "Destructor called\n";
 }
