@@ -47,9 +47,9 @@ class	AForm
 	};
 
 	AForm();
-	AForm(const AForm &form);
+	AForm(const AForm &aform);
 	AForm(const std::string& name, const int gradeToSign, const int gradeToExecute);
-	AForm& operator=(const AForm& form);
+	AForm& operator=(const AForm& aform);
 	~AForm();
 };
 

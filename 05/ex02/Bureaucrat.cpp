@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 // Grade ranges from 1 (highest possible grade) to 150 (lowest possible grade).
 // Constructing, incrementing or decrementing out of range should throw an error.
@@ -30,16 +30,16 @@ int	Bureaucrat::getGrade() const
 	return (_grade);
 }
 
-void	Bureaucrat::signForm(Form& form)
+void	Bureaucrat::signForm(AForm& aform)
 {
 	try
 	{
-		form.beSigned(*this);
-		std::cout << this->getName() << " signed " << form.getName() << '\n';
+		aform.beSigned(*this);
+		std::cout << this->getName() << " signed " << aform.getName() << '\n';
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << this->getName() << " couldn't sign " << form.getName() << " because " << e.what();
+		std::cerr << this->getName() << " couldn't sign " << aform.getName() << " because " << e.what();
 	}
 }
 

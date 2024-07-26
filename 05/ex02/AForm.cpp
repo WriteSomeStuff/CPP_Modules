@@ -69,25 +69,25 @@ AForm::AForm() : _name("No Aform name"), _isSigned(false), _gradeToSign(150), _g
 	std::cout << "Default constructor called\n";
 }
 
-AForm::AForm(const AForm& form) : _name(form.getName()), _isSigned(form.getIsSigned()), _gradeToSign(form.getGradeToSign()), _gradeToExecute(form.getGradeToExecute())
+AForm::AForm(const AForm& aform) : _name(aform.getName()), _isSigned(aform.getIsSigned()), _gradeToSign(aform.getGradeToSign()), _gradeToExecute(aform.getGradeToExecute())
 {
 	std::cout << "Copy constructor called\n";
 }
 
-AForm&	AForm::operator=(const AForm& form)
+AForm&	AForm::operator=(const AForm& aform)
 {
 	std::cout << "Copy assignment operator called\n";
-	if (this != &form)
-		this->setIsSigned(form.getIsSigned());
+	if (this != &aform)
+		this->setIsSigned(aform.getIsSigned());
 	return (*this);
 }
 
-std::ostream&	operator<<(std::ostream& co, const AForm& form)
+std::ostream&	operator<<(std::ostream& co, const AForm& aform)
 {
-	if (form.getIsSigned() == true)
-		co << form.getName() << " needs grade " << form.getGradeToSign() << " to sign, grade " << form.getGradeToExecute() << " to execute and HAS been signed.\n";
+	if (aform.getIsSigned() == true)
+		co << aform.getName() << " needs grade " << aform.getGradeToSign() << " to sign, grade " << aform.getGradeToExecute() << " to execute and HAS been signed.\n";
 	else
-		co << form.getName() << " needs grade " << form.getGradeToSign() << " to sign, grade " << form.getGradeToExecute() << " to execute and HAS NOT been signed.\n";
+		co << aform.getName() << " needs grade " << aform.getGradeToSign() << " to sign, grade " << aform.getGradeToExecute() << " to execute and HAS NOT been signed.\n";
 	return (co);
 }
 
