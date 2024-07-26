@@ -29,19 +29,11 @@ bool	Form::getIsSigned() const
 
 int	Form::getGradeToSign() const
 {
-	if (_gradeToSign < 1)
-		throw GradeTooHighException();
-	if (_gradeToSign > 150)
-		throw GradeTooLowException();
 	return(_gradeToSign);
 }
 
 int	Form::getGradeToExecute() const
 {
-	if (_gradeToExecute < 1)
-		throw GradeTooHighException();
-	if (_gradeToExecute > 150)
-		throw GradeTooLowException();
 	return(_gradeToExecute);
 }
 
