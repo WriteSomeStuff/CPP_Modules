@@ -1,16 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   PresidentialPardonForm.hpp                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/07/29 12:43:48 by cschabra      #+#    #+#                 */
+/*   Updated: 2024/07/29 12:43:49 by cschabra      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 
-#include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
-class	PresidentialPardonForm : public virtual Bureaucrat
+class	PresidentialPardonForm : public virtual AForm
 {
 	private:
-	const int	_gradeToSign = 25;
-	const int	_gradeToExecute = 5;
+	const std::string	_target;
+	const int			_gradeToSign = 25;
+	const int			_gradeToExecute = 5;
+	virtual void		beExecuted() const;
 
 	public:
-	void	execute(Bureaucrat const & executor) const;
 	PresidentialPardonForm() = delete;
 	PresidentialPardonForm(const std::string& target);
 	PresidentialPardonForm(const PresidentialPardonForm& form);

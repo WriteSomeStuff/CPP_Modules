@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int	main()
 {
@@ -19,6 +22,10 @@ int	main()
 		Bureaucrat	a("Lillia", 1);
 		Bureaucrat	b("Smolder", 150);
 		Bureaucrat	c("Gnar", 66);
+
+		PresidentialPardonForm	form1(a.getName());
+		RobotomyRequestForm		form2(b.getName());
+		ShrubberyCreationForm	form3("Garden");
 
 		std::cout << "----------------------------------------------------\n";
 	}
