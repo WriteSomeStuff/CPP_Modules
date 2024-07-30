@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/02 13:19:01 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/02 13:41:40 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/30 16:16:21 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void	AForm::execute(Bureaucrat const & executor) const
 			throw Bureaucrat::GradeTooLowException();
 		this->beExecuted();
 	}
-	throw NotSigned();
+	else
+		throw NotSigned();
 }
 
 const char*	AForm::GradeTooHighException::what() const throw()

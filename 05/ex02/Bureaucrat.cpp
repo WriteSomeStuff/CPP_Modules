@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/09 14:11:46 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/02 13:18:51 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/30 17:03:06 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	Bureaucrat::signForm(AForm& form)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << this->getName() << " couldn't sign " << form.getName() << " because " << e.what();
+		std::cerr << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << '\n';
 	}
 }
 
@@ -52,7 +52,7 @@ void	Bureaucrat::executeForm(AForm const & form)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << this->getName() << " couldn't execute " << form.getName() << " because " << e.what();
+		std::cerr << this->getName() << " couldn't execute " << form.getName() << " because " << e.what() << '\n';
 	}	
 }
 

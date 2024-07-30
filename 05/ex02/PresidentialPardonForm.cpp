@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/29 12:43:45 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/29 12:43:46 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/30 16:50:35 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,8 @@ void	PresidentialPardonForm::beExecuted() const
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
- : _target(target), AForm("PresidentialPardonForm", _gradeToSign, _gradeToExecute)
+ : AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
-}
-
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& form)
-{
-
-}
-
-PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& form)
-{
-
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()

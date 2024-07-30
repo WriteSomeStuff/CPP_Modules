@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/29 12:43:50 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/29 12:43:51 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/30 16:50:38 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,8 @@ void	RobotomyRequestForm::beExecuted() const
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
- : _target(target), AForm("RobotomyRequestForm", _gradeToSign, _gradeToExecute)
+ : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
-}
-
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& form)
-{
-
-}
-
-RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& form)
-{
-
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()

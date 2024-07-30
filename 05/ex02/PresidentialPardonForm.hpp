@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/29 12:43:48 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/29 12:43:49 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/30 16:12:59 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,13 @@ class	PresidentialPardonForm : public virtual AForm
 {
 	private:
 	const std::string	_target;
-	const int			_gradeToSign = 25;
-	const int			_gradeToExecute = 5;
 	virtual void		beExecuted() const;
 
 	public:
 	PresidentialPardonForm() = delete;
 	PresidentialPardonForm(const std::string& target);
-	PresidentialPardonForm(const PresidentialPardonForm& form);
-	PresidentialPardonForm& operator=(const PresidentialPardonForm& form);
+	PresidentialPardonForm(const PresidentialPardonForm& form) = delete;
+	PresidentialPardonForm& operator=(const PresidentialPardonForm& form) = delete;
 	~PresidentialPardonForm();
 };
 
