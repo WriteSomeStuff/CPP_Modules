@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/02 13:18:22 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/30 17:06:22 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/31 11:47:23 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,37 @@ int	main()
 	try
 	{
 		Bureaucrat	a("Lillia", 1);
-		Bureaucrat	b("Smolder", 150);
-		Bureaucrat	c("Gnar", 66);
+		Bureaucrat	b("Gnar", 66);
+		Bureaucrat	c("Smolder", 150);
 
-		PresidentialPardonForm	form1("Nami");
+		ShrubberyCreationForm	form1("Shyvana");
 		RobotomyRequestForm		form2("Amumu");
-		ShrubberyCreationForm	form3("Shyvana");
+		PresidentialPardonForm	form3("Nami");
 
+		a.signForm(form1);
+		form1.execute(a);
+		a.signForm(form2);
+		form2.execute(a);
+		form2.execute(a);
+		form2.execute(a);
+		form2.execute(a);
+		a.signForm(form3);
+		form3.execute(a);
+
+		b.signForm(form1);
+		form1.execute(b);
+		b.signForm(form2);
+		form2.execute(b);
 		b.signForm(form3);
 		form3.execute(b);
-		// a.signForm(form3);
-		// form3.execute(a);
+		
+		c.signForm(form1);
+		form1.execute(c);
+		c.signForm(form2);
+		form2.execute(c);
+		c.signForm(form3);
+		form3.execute(c);
+	
 
 		std::cout << "----------------------------------------------------\n";
 	}

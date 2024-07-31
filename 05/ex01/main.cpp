@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/02 13:18:22 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/02 13:18:23 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/31 11:38:32 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main()
 		std::cout << f;
 		std::cout << g;
 		std::cout << "----------------------------------------------------\n";
-		Form	h("Error", 0, 150);
+		Form	h("Whoops", 0, 150);
 		std::cout << h;
 	}
 	catch(const std::exception& e)

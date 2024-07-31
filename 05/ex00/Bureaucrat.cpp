@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/09 14:11:46 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/02 13:18:51 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/31 11:34:49 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,17 @@ void	Bureaucrat::decrementGrade()
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Bureaucrat grade too high");
+	return ("Bureaucrat grade too high\n");
 }
 
 const char*	Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Bureaucrat grade too low");
+	return ("Bureaucrat grade too low\n");
 }
 
 Bureaucrat::Bureaucrat(const std::string& name, const int grade) : _name(name)
 {
-	if (grade < 0)
+	if (grade < 1)
 		throw GradeTooHighException();
 	if (grade > 150)
 		throw GradeTooLowException();

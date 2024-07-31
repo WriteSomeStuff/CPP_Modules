@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/09 14:11:46 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/30 17:03:06 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/31 11:39:13 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	Bureaucrat::signForm(AForm& form)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << '\n';
+		std::cerr << this->getName() << " couldn't sign " << form.getName() << " because " << e.what();
 	}
 }
 
@@ -52,7 +52,7 @@ void	Bureaucrat::executeForm(AForm const & form)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << this->getName() << " couldn't execute " << form.getName() << " because " << e.what() << '\n';
+		std::cerr << this->getName() << " couldn't execute " << form.getName() << " because " << e.what();
 	}	
 }
 
@@ -72,17 +72,17 @@ void	Bureaucrat::decrementGrade()
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Bureaucrat grade too high");
+	return ("Bureaucrat grade too high\n");
 }
 
 const char*	Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Bureaucrat grade too low");
+	return ("Bureaucrat grade too low\n");
 }
 
 Bureaucrat::Bureaucrat(const std::string& name, const int grade) : _name(name)
 {
-	if (grade < 0)
+	if (grade < 1)
 		throw GradeTooHighException();
 	if (grade > 150)
 		throw GradeTooLowException();

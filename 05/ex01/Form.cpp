@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/02 13:19:01 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/02 13:41:40 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/31 11:36:05 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ const char*	Form::GradeTooLowException::what() const throw()
 
 Form::Form(const std::string& name, const int gradeToSign, const int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
-	if (this->getGradeToExecute() < 0 || this->getGradeToSign() < 0)
+	if (this->getGradeToExecute() < 1 || this->getGradeToSign() < 1)
 		throw GradeTooHighException();
 	if (this->getGradeToExecute() > 150 || this->getGradeToSign() > 150)
 		throw GradeTooLowException();

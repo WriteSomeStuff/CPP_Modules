@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/02 13:18:22 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/02 13:18:23 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/31 11:35:33 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what();
 	}
 }
