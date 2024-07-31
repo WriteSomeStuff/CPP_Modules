@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/02 13:18:22 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/31 11:47:23 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/31 11:56:57 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,29 +28,26 @@ int	main()
 		PresidentialPardonForm	form3("Nami");
 
 		a.signForm(form1);
-		form1.execute(a);
+		a.executeForm(form1);
 		a.signForm(form2);
-		form2.execute(a);
-		form2.execute(a);
-		form2.execute(a);
-		form2.execute(a);
+		a.executeForm(form2);
+		a.executeForm(form2);
 		a.signForm(form3);
-		form3.execute(a);
+		a.executeForm(form3);
 
-		b.signForm(form1);
-		form1.execute(b);
-		b.signForm(form2);
-		form2.execute(b);
-		b.signForm(form3);
-		form3.execute(b);
+		// b.signForm(form1);
+		// form1.execute(b);
+		// b.signForm(form2);
+		// form2.execute(b);
+		// b.signForm(form3);
+		// form3.execute(b);
 		
-		c.signForm(form1);
-		form1.execute(c);
-		c.signForm(form2);
-		form2.execute(c);
-		c.signForm(form3);
-		form3.execute(c);
-	
+		// c.signForm(form1);
+		// form1.execute(c);
+		// c.signForm(form2);
+		// form2.execute(c);
+		// c.signForm(form3);
+		// form3.execute(c);
 
 		std::cout << "----------------------------------------------------\n";
 	}

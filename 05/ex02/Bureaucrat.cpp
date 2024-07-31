@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/09 14:11:46 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/31 11:39:13 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/31 11:51:59 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	Bureaucrat::executeForm(AForm const & form)
 {
 	try
 	{
-		form.execute(*this);
 		std::cout << this->getName() << " executed " << form.getName() << '\n';
+		form.execute(*this);
 	}
 	catch(const std::exception& e)
 	{
