@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/09 14:10:53 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/06/25 16:55:44 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/31 12:07:58 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ class Bureaucrat
 	};
 
 	Bureaucrat();
-	Bureaucrat(const Bureaucrat& Bureaucrat);
+	Bureaucrat(const Bureaucrat& bureaucrat);
 	Bureaucrat(const std::string& name, const int grade);
-	Bureaucrat&	operator=(const Bureaucrat& Bureaucrat);
+	Bureaucrat&	operator=(const Bureaucrat& bureaucrat);
 	~Bureaucrat();
 };
 

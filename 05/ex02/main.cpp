@@ -6,7 +6,7 @@
 /*   By: cschabra <cschabra@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/02 13:18:22 by cschabra      #+#    #+#                 */
-/*   Updated: 2024/07/31 11:56:57 by cschabra      ########   odam.nl         */
+/*   Updated: 2024/07/31 12:39:59 by cschabra      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main()
 		Bureaucrat	b("Gnar", 66);
 		Bureaucrat	c("Smolder", 150);
 
-		ShrubberyCreationForm	form1("Shyvana");
+		ShrubberyCreationForm	form1("Skygarden");
 		RobotomyRequestForm		form2("Amumu");
 		PresidentialPardonForm	form3("Nami");
 

@@ -6,15 +6,20 @@
 #    By: cschabra <cschabra@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/02/13 13:46:15 by cschabra      #+#    #+#                  #
-#    Updated: 2024/05/09 14:16:16 by cschabra      ########   odam.nl          #
+#    Updated: 2024/07/31 12:39:04 by cschabra      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= 
+NAME= intern
 CC= c++
-CFLAGS= -Wall -Werror -Wextra -std=c++11
-
-SRCS= 
+CFLAGS= -Wall -Werror -Wextra -std=c++11 -fsanitize=address
+SRCS= AForm.cpp \
+Bureaucrat.cpp \
+Intern.cpp \
+main.cpp \
+PresidentialPardonForm.cpp \
+RobotomyRequestForm.cpp \
+ShrubberyCreationForm.cpp
 
 OBJS= ${SRCS:%.cpp=%.o}
 
