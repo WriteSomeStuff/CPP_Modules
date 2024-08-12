@@ -8,7 +8,8 @@ enum LiteralType
 	FLOAT,
 	DOUBLE,
 	CHAR,
-	INT
+	INT,
+	INVALID
 };
 
 static void	checkForValidString(const std::string& str)
@@ -71,45 +72,35 @@ static void	checkForValidString(const std::string& str)
 
 static LiteralType determineType(const std::string& str)
 {
-	LiteralType	type{};
 	int	i = 0;
 
 	if (str.find('.') != std::string::npos && str.size() != 1)
 	{
 		if (str.find('f') != std::string::npos)
-		{
-			type = FLOAT;
-		}
-		else
-		{
-			type = DOUBLE;
-		}
+			return (FLOAT);
+		return (DOUBLE);
 	}
-	else
+	try
 	{
-		try
-		{
-			i = std::stoi(str);
-			type = INT;
-		}
-		catch(const std::exception& e)
-		{
-			if (str.size() != 1)
-			{
-				std::cerr << "Wrong input, don't exceed more than max int/min int for int and don't exceed more than 1 character for char. If using special characters like ~ use quotes like '~'. Other possible inputs: nan, nanf, -inf, +inf, -inff, +inff, inf, inff\n";
-				exit(EXIT_FAILURE);
-			}
-			type = CHAR;
-		}
+		i = std::stoi(str);
+		return (INT);
 	}
-	return (type);
+	catch(const std::exception& e)
+	{
+		if (str.size() != 1)
+		{
+			std::cerr << "Wrong input, don't exceed more than max int/min int for int and don't exceed more than 1 character for char. If using special characters like ~ use quotes like '~'. Other possible inputs: nan, nanf, -inf, +inf, -inff, +inff, inf, inff\n";
+			exit(EXIT_FAILURE);
+		}
+		return (CHAR);
+	}
+	return (INVALID);
 }
 
 bool	hasFractionalPart(double f)
 {
 	double intPart;
-	double fracPart = std::modf(f, &intPart);
-	return fracPart != 0.0f;
+	return (std::modf(f, &intPart) != 0.0f);
 }
 
 static void	printFloat(const std::string& str)
@@ -151,13 +142,9 @@ static void	printFloat(const std::string& str)
 		exit(EXIT_SUCCESS);		
 	}
 	if (j > 31 && j < 127)
-	{
 		std::cout << "char: '" << static_cast<char>(j) << "'\n";
-	}
 	else
-	{
 		std::cout << "char: Non displayable\n"; 
-	}
 	std::cout << "int: " << j << '\n';
 	if (!hasFractionalPart(f))
 	{
@@ -193,7 +180,7 @@ static void	printDouble(const std::string& str)
 	}
 	if (std::isnan(d))
 		checkForValidString("nan");
-	else if (std::isinf(d) || d > std::numeric_limits<double>::max() || d < std::numeric_limits<double>::min())
+	else if (std::isinf(d))
 	{
 		if (d > 0)
 			checkForValidString("inf");
@@ -210,13 +197,9 @@ static void	printDouble(const std::string& str)
 		exit(EXIT_SUCCESS);
 	}
 	if (j > 31 && j < 127)
-	{
 		std::cout << "char: '" << static_cast<char>(j) << "'\n"; 
-	}
 	else
-	{
 		std::cout << "char: Non displayable\n"; 
-	}
 	std::cout << "int: " << j << '\n';
 	if (!hasFractionalPart(d))
 	{
@@ -232,24 +215,11 @@ static void	printDouble(const std::string& str)
 
 static void	printInt(const std::string& str)
 {
-	int	i = 0;
-	try
-	{
-		i = std::stoi(str);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-		exit(EXIT_FAILURE);
-	}
+	int	i = std::stoi(str);
 	if (i > 31 && i < 127)
-	{
 		std::cout << "char: '" << static_cast<char>(i) << "'\n"; 
-	}
 	else
-	{
 		std::cout << "char: Non displayable\n"; 
-	}
 	std::cout << "int: " << i << '\n';
 	std::cout << "float: " << static_cast<float>(i) << ".0f\n";
 	std::cout << "double: " << static_cast<double>(i) << ".0\n";
