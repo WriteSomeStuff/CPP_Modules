@@ -215,7 +215,13 @@ static void	printDouble(const std::string& str)
 
 static void	printInt(const std::string& str)
 {
+	size_t	pos = 0;
 	int	i = std::stoi(str);
+	if (pos != str.size())
+	{
+		std::cout << "invalid input\n";
+		exit(EXIT_FAILURE);
+	}
 	if (i > 31 && i < 127)
 		std::cout << "char: '" << static_cast<char>(i) << "'\n"; 
 	else
@@ -247,7 +253,7 @@ void	ScalarConverter::convert(const std::string& str)
 			std::cout << "char: '" << str[0] << "'\n";
 			std::cout << "int: " << static_cast<int>(str[0]) << '\n';
 			std::cout << "float: " << static_cast<float>(str[0]) << ".0f\n";
-			std::cout << "double: " << static_cast<double>(str[0]) << "\n";			
+			std::cout << "double: " << static_cast<double>(str[0]) << ".0\n";			
 			break ;
 		}
 		case INT:
