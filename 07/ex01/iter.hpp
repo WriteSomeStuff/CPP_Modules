@@ -1,8 +1,6 @@
 #ifndef ITER_HPP
 # define ITER_HPP
 
-#include <cstddef>
-
 template<typename T>
 void iter(T* address, size_t length, void (*fnc)(T))
 {
