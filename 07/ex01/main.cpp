@@ -27,18 +27,26 @@ std::ostream& operator<<(std::ostream&o, const Test& t)
 }
 
 template<typename T>
-void increase(T n)
+void printOutput(const T& n)
+{
+	std::cout << typeid(n).name() << ": " << n << '\n';
+}
+
+template<typename T>
+void printOutput(T n)
 {
 	std::cout << typeid(n).name() << ": " << n << '\n';
 }
 
 int	main(void)
 {
-	int		array1[] = {1, 2, 3, 4, 5};
-	float	array2[] = {1.1f, 2.2f, 3.3f, 4.4f, 5.5f};
-	Test	test[5] = {4, 5, 6, 7, 8};
+	int			array1[] = {1, 2, 3, 4, 5};
+	float		array2[] = {1.1f, 2.2f, 3.3f, 4.4f, 5.5f};
+	Test		test1[5] = {4, 5, 6, 7, 8};
+	const Test	test2[5];
 
-	iter(array1, sizeof(array1) / sizeof(int), &increase);
-	iter(array2, sizeof(array2) / sizeof(float), &increase);
-	iter(test, sizeof(array2) / sizeof(Test), &increase);
+	iter(array1, sizeof(array1) / sizeof(int), printOutput);
+	iter(array2, sizeof(array2) / sizeof(float), printOutput);
+	iter(test1, sizeof(array2) / sizeof(Test), printOutput);
+	iter(test2, sizeof(array2) / sizeof(Test), printOutput);
 }
