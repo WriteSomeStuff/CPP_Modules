@@ -5,7 +5,6 @@ template<typename T>
 void increase(T n)
 {
 	std::cout << typeid(n).name() << ": " << n + 1 << '\n';
-	
 }
 
 int	main(void)
