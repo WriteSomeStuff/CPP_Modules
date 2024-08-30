@@ -12,6 +12,11 @@ class Array
 	unsigned int	_arraySize;
 
 	public:
+	unsigned int	size() const
+	{
+		return (_arraySize);
+	}
+
 	Array()
 	{
 		_array = new T[0];
@@ -25,8 +30,8 @@ class Array
 	Array(const Array& arr)
 	{
 		this->_array = new T[arr._arraySize];
-		this->_arraySize = arr._arraySize;
-		for (unsigned int i = 0; i < this->_arraySize; i++)
+		this->_arraySize = arr.size();
+		for (unsigned int i = 0; i < this->size(); i++)
 		{
 			this->_array[i] = arr._array[i];
 		}
@@ -36,25 +41,42 @@ class Array
 		if (this != &arr)
 		{
 			delete[](this->_array);
-			this->_array = new T[arr._arraySize];
-			this->_arraySize = arr._arraySize;
-			for (unsigned int i = 0; i < this->_arraySize; i++)
+			this->_array = new T[arr.size()];
+			this->_arraySize = arr.size();
+			for (unsigned int i = 0; i < this->size(); i++)
 			{
 				this->_array[i] = arr._array[i];
 			}
 		}
 		return (*this);
 	}
-	T&	operator[](unsigned int index)
+	T&	operator[](unsigned int index) const
 	{
-		if (index >= _arraySize)
+		if (index >= this->size())
 			throw std::out_of_range("Index out of bounds");
 		return(_array[index]);
 	}
+	// const T&	operator[](unsigned int index) const
+	// {
+	// 	if (index >= this->size())
+	// 		throw std::out_of_range("Index out of bounds");
+	// 	return(_array[index]);
+	// }
 	~Array()
 	{
 		delete[](_array);
 	}
 };
+
+template<typename T>
+std::ostream& operator<<(std::ostream&o, const Array<T>& array)
+{
+	for (unsigned i = 0; i < array.size(); i++)
+	{
+		o << array[i];
+		// if ()
+	}
+	return (o);
+}
 
 #endif
