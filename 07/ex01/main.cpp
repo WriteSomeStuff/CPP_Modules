@@ -47,6 +47,6 @@ int	main(void)
 
 	iter(array1, sizeof(array1) / sizeof(int), addInt);
 	iter(array2, sizeof(array2) / sizeof(float), addInt);
-	iter(test1, sizeof(array2) / sizeof(Test), printOutput);
-	iter(test2, sizeof(array2) / sizeof(Test), printOutput);
+	iter(test1, sizeof(test1) / sizeof(Test), printOutput);
+	iter(test2, sizeof(test2) / sizeof(Test), printOutput);
 }
