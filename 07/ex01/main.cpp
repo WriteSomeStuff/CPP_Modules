@@ -20,6 +20,7 @@ class Test
 		return (_i);
 	}
 };
+
 std::ostream& operator<<(std::ostream&o, const Test& t)
 {
 	o << t.getInt();

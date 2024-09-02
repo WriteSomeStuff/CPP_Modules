@@ -3,7 +3,7 @@
 int	main(void)
 {
 	Array<int>	arr(5);
-	const Array<int>	arr2(5);
+	Array<int>	arr2(5);
 
 	try
 	{
@@ -15,16 +15,16 @@ int	main(void)
 		{
 			std::cout << arr[i] << '\n';
 		}
-		// for(unsigned int i = 0; i < 5; i++)
-		// {
-		// 	arr2[i] = i + 10;
-		// }
+		for(unsigned int i = 0; i < 5; i++)
+		{
+			arr2[i] = i + 10;
+		}
 		for(unsigned int i = 0; i < 5; i++)
 		{
 			std::cout << arr2[i] << '\n';
 		}
 		std::cout << "-----------------\n";
-		// arr = arr2;
+		arr = arr2;
 		for(unsigned int i = 0; i < 5; i++)
 		{
 			std::cout << arr[i] << '\n';
@@ -46,10 +46,10 @@ int	main(void)
 			std::cout << "arr: " << arr[i] << '\n';
 		}
 		std::cout << "-----------------\n";
-		// for(unsigned int i = 0; i < 5; i++)
-		// {
-		// 	arr2[i] = i + 5;
-		// }
+		for(unsigned int i = 0; i < 5; i++)
+		{
+			arr2[i] = i + 5;
+		}
 		for(unsigned int i = 0; i < 5; i++)
 		{
 			std::cout << "arr2: " << arr2[i] << '\n';

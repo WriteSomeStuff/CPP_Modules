@@ -12,7 +12,7 @@ void swap(T& first, T& second)
 }
 
 template<typename T>
-T min(T first, T second)
+T min(T& first, T& second)
 {
 	if (first < second)
 		return (first);
@@ -20,7 +20,7 @@ T min(T first, T second)
 }
 
 template<typename T>
-T max(T first, T second)
+T max(T& first, T& second)
 {
 	if (first > second)
 		return (first);
