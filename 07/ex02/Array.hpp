@@ -50,18 +50,18 @@ class Array
 		}
 		return (*this);
 	}
-	T&	operator[](unsigned int index) const
+	const T&	operator[](const unsigned int index) const
 	{
 		if (index >= this->size())
 			throw std::out_of_range("Index out of bounds");
 		return(_array[index]);
 	}
-	// const T&	operator[](unsigned int index) const
-	// {
-	// 	if (index >= this->size())
-	// 		throw std::out_of_range("Index out of bounds");
-	// 	return(_array[index]);
-	// }
+	T&	operator[](const unsigned int index)
+	{
+		if (index >= this->size())
+			throw std::out_of_range("Index out of bounds");
+		return(_array[index]);
+	}
 	~Array()
 	{
 		delete[](_array);
@@ -74,7 +74,6 @@ std::ostream& operator<<(std::ostream&o, const Array<T>& array)
 	for (unsigned i = 0; i < array.size(); i++)
 	{
 		o << array[i];
-		// if ()
 	}
 	return (o);
 }

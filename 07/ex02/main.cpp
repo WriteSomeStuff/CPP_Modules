@@ -3,7 +3,7 @@
 int	main(void)
 {
 	Array<int>	arr(5);
-	Array<const int>	arr2[5] = {0, 0, 0, 0, 0};
+	const Array<int>	arr2(5);
 
 	try
 	{
