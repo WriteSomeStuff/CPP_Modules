@@ -11,7 +11,7 @@
 template<typename T>
 bool	easyfind(T& t, int find)
 {
-	for (int& i : t)
+	for (const int& i : t)
 	{
 		if (i == find)
 			return (true);
