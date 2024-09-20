@@ -17,6 +17,7 @@ class Span
 
 	public:
 	void			addNumber(const int& n);
+	void			fillVec();
 	int				shortestSpan();
 	int				longestSpan();
 	unsigned int&	getMaxSize();

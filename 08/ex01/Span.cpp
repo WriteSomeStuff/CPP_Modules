@@ -1,5 +1,6 @@
 #include "Span.hpp"
 #include <algorithm>
+#include <random>
 
 unsigned int&	Span::getMaxSize()
 {
@@ -15,14 +16,33 @@ void	Span::addNumber(const int& n)
 {
 	if (getCurrentSize() == getMaxSize())
 		throw std::length_error("Max size has been reached");
-	_currentSize++;
 	_vec.push_back(n);
+	_currentSize++;
+}
+
+static int	randomInt()
+{
+	static std::random_device	rd;
+	static std::mt19937	gen(rd());
+	static std::uniform_int_distribution<int>	dis(-100, 100);
+    return (dis(gen));
+}
+
+void	Span::fillVec()
+{
+	for (unsigned int i = 0; i < _maxSize; i++)
+	{
+		int	n = randomInt();
+		std::cout << n << '\n';
+		_vec.push_back(n);
+		_currentSize++;
+	}
 }
 
 int		Span::shortestSpan()
 {
 	if (_currentSize <= 1)
-		return (0);
+		throw std::length_error("Not enough values stored to check span.");
 	long int	shortest = UINT32_MAX;
 	std::sort(_vec.begin(), _vec.end());
 	for (unsigned int i = 1; i < _currentSize; i++)
@@ -39,7 +59,7 @@ int		Span::shortestSpan()
 int		Span::longestSpan()
 {
 	if (_currentSize <= 1)
-		return (0);
+		throw std::length_error("Not enough values stored to check span.");
 	int			highest = *std::max_element(_vec.begin(), _vec.end());
 	int			lowest = *std::min_element(_vec.begin(), _vec.end());
 	long int	diff = static_cast<long int>(highest) - static_cast<long int>(lowest);

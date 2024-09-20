@@ -19,12 +19,17 @@ int	main(void)
 		// limit testing with max and min int
 		span1.addNumber(2147483647);
 		span1.addNumber(0);
-		span1.addNumber(-2147483648);
+		// span1.addNumber(-2147483648);
 		std::cout << span1.getCurrentSize() << '\n';
 		std::cout << span1.shortestSpan() << '\n';
 		std::cout << span1.longestSpan() << '\n';
 		std::cout << "----------------------\n";
-		// write function to fill for desired amount of random values
+		// fill entire vector with pseudo-random values
+		span2.fillVec();
+		std::cout << "----------------------\n";
+		std::cout << span2.getCurrentSize() << '\n';
+		std::cout << span2.shortestSpan() << '\n';
+		std::cout << span2.longestSpan() << '\n';
 	}
 	catch(const std::exception& e)
 	{
