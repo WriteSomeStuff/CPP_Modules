@@ -1,6 +1,7 @@
 #include "Span.hpp"
 #include <algorithm>
 #include <random>
+#include <numeric>
 
 unsigned int&	Span::getMaxSize()
 {
@@ -33,7 +34,6 @@ void	Span::fillVec()
 	for (unsigned int i = 0; i < _maxSize; i++)
 	{
 		int	n = randomInt();
-		std::cout << n << '\n';
 		_vec.push_back(n);
 		_currentSize++;
 	}
@@ -43,14 +43,15 @@ int		Span::shortestSpan()
 {
 	if (_currentSize <= 1)
 		throw std::length_error("Not enough values stored to check span.");
-	long int	shortest = UINT32_MAX;
 	std::sort(_vec.begin(), _vec.end());
-	for (unsigned int i = 1; i < _currentSize; i++)
+	std::vector<long int> diffs(_currentSize);
+	std::adjacent_difference(_vec.begin(), _vec.end(), diffs.begin());
+	for (long int& num : diffs)
 	{
-		long int diff = static_cast<long int>(_vec[i]) - static_cast<long int>(_vec[i - 1]);
-		if (shortest > diff)
-			shortest = diff;
+		if (num < 0)
+			num *= -1;
 	}
+	long int	shortest = *std::min_element(diffs.begin() + 1, diffs.end());
 	if (shortest > INT32_MAX)
 		throw std::out_of_range("Difference is too large, can't return as int!");
 	return (static_cast<int>(shortest));

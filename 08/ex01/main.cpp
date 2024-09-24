@@ -26,7 +26,6 @@ int	main(void)
 		std::cout << "----------------------\n";
 		// fill entire vector with pseudo-random values
 		span2.fillVec();
-		std::cout << "----------------------\n";
 		std::cout << span2.getCurrentSize() << '\n';
 		std::cout << span2.shortestSpan() << '\n';
 		std::cout << span2.longestSpan() << '\n';
