@@ -10,8 +10,8 @@ class MutantStack : public std::stack<T, Container>
 	private:
 
 	public:
-	typedef typename Container::iterator				iterator;
-	typedef typename Container::const_iterator			const_iterator;
+	typedef typename Container::iterator		iterator;
+	typedef typename Container::const_iterator	const_iterator;
 
 	iterator	begin()
 	{
