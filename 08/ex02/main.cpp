@@ -1,4 +1,35 @@
 #include "MutantStack.hpp"
+#include <list>
+#include <vector>
+
+template <typename Container>
+void	testContainer(Container& container)
+{
+	container.push_back(5);
+	container.push_back(17);
+
+	std::cout << container.back() << std::endl;
+
+	container.pop_back();
+
+	std::cout << container.size() << std::endl;
+
+	container.push_back(3);
+	container.push_back(5);
+	container.push_back(737);
+	container.push_back(0);
+
+	typename Container::iterator it = container.begin();
+	typename Container::iterator ite = container.end();
+
+	++it;
+	--it;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+}
 
 int	main(void)
 {
@@ -30,5 +61,11 @@ int	main(void)
 		++it;
 	}
 	std::stack<int> s(mstack);
+	std::cout << "-----------------------\n";
+	std::list<int> lst;
+	testContainer(lst);
+	std::cout << "-----------------------\n";
+	std::vector<int> vec;
+	testContainer(vec);
 	return 0;
 }
