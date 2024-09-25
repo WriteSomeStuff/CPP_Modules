@@ -31,12 +31,44 @@ void	testContainer(Container& container)
 	}
 }
 
+void	testTemplate()
+{
+	MutantStack<int, std::list<int>>	ms;
+
+	ms.push(5);
+	ms.push(17);
+
+	std::cout << ms.top() << std::endl;
+
+	ms.pop();
+
+	std::cout << ms.size() << std::endl;
+
+	ms.push(3);
+	ms.push(5);
+	ms.push(737);
+	//[...]
+	ms.push(0);
+
+	MutantStack<int, std::list<int>>::iterator it = ms.begin();
+	MutantStack<int, std::list<int>>::iterator ite = ms.end();
+
+	++it;
+	--it;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+}
+
 int	main(void)
 {
 	MutantStack<int>	mstack;
 
 	mstack.push(5);
 	mstack.push(17);
+
 
 	std::cout << mstack.top() << std::endl;
 
@@ -67,5 +99,7 @@ int	main(void)
 	std::cout << "-----------------------\n";
 	std::vector<int> vec;
 	testContainer(vec);
+	std::cout << "-----------------------\n";
+	testTemplate();
 	return 0;
 }
