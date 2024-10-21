@@ -21,9 +21,11 @@ void	checkForValidDate(const std::string& str)
 std::map<std::string, double>::const_iterator	BitcoinExchange::getIterator(const std::string& date) const
 {
 	std::map<std::string, double>::const_iterator	it = _map.lower_bound(date);
-	if (it == _map.begin())
-		return (it);
-	return (--it);
+	if (it == _map.begin() && it->first != date)
+		throw std::out_of_range("");
+	if (it->first != date)
+		return (--it);
+	return (it);
 }
 
 BitcoinExchange::BitcoinExchange()
