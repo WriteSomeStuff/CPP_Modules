@@ -3,6 +3,7 @@
 
 #include <stack>
 #include <iostream>
+#include <cctype>
 
 class RPN
 {

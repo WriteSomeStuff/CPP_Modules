@@ -37,7 +37,7 @@ BitcoinExchange::BitcoinExchange()
 	if (srcFile.fail())
 	{
 		std::cerr << "Error: could not open file.\n";
-		std::exit(1);
+		std::exit(EXIT_FAILURE);
 	}
 	while (std::getline(srcFile, str))
 	{
@@ -47,7 +47,7 @@ BitcoinExchange::BitcoinExchange()
 		if (pos == std::string::npos || pos != 10 || pos + 1 >= str.size())
 		{
 			std::cerr << "Error found in database.\n";
-			exit(1);
+			std::exit(EXIT_FAILURE);
 		}
 		try
 		{
@@ -61,7 +61,7 @@ BitcoinExchange::BitcoinExchange()
 		catch(const std::exception& e)
 		{
 			std::cerr << "Wrong value given, " << e.what() << '\n';
-			exit(1);
+			std::exit(EXIT_FAILURE);
 		}
 	}
 	srcFile.close();

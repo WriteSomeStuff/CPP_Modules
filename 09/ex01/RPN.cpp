@@ -1,4 +1,5 @@
 #include "RPN.hpp"
+#include <cstdlib>
 
 RPN::RPN()
 {
@@ -12,7 +13,7 @@ RPN::RPN(const std::string& str) : _input(str)
 
 	for (size_t i = 0; i < str.size(); i++)
 	{
-		if (isdigit(str[i]))
+		if (std::isdigit(str[i]))
 		{
 			int	number = str[i] - '0';
 			_stack.push(number);
@@ -22,7 +23,7 @@ RPN::RPN(const std::string& str) : _input(str)
 			if (_stack.size() < 2)
 			{
 				std::cerr << "Wrong amount/order of numbers and operators\n";
-				exit(1);
+				std::exit(EXIT_FAILURE);
 			}
 			nr2 = _stack.top();
 			_stack.pop();
@@ -44,7 +45,7 @@ RPN::RPN(const std::string& str) : _input(str)
 	if (_stack.size() != 0)
 	{
 		std::cerr << "Wrong amount of operators/numbers, stack not empty\n";
-		exit(1);
+		std::exit(EXIT_FAILURE);
 	}
 	std::cout << result << '\n';
 }

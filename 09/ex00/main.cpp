@@ -1,6 +1,5 @@
 #include "BitcoinExchange.hpp"
 #include <iostream>
-#include <cstdlib>
 
 void	findExchangeRate(const std::string& str, const BitcoinExchange& database)
 {
@@ -11,7 +10,7 @@ void	findExchangeRate(const std::string& str, const BitcoinExchange& database)
 	checkForValidDate(date);
 	if (str.substr(10, 3) != " | ")
 		throw std::invalid_argument("");
-	value = stod(str.substr(13));
+	value = std::stod(str.substr(13));
 	if (value < 0 || value > 2147483647.0)
 		throw std::out_of_range("");
 	std::map<std::string, double>::const_iterator it = database.getIterator(date);
@@ -27,7 +26,7 @@ void	readInputFile(const char* inputFile, const BitcoinExchange& database)
 	if (srcFile.fail())
 	{
 		std::cerr << "Error: could not open file.\n";
-		std::exit(1);
+		std::exit(EXIT_FAILURE);
 	}
 	while (std::getline(srcFile, str))
 	{
