@@ -1,12 +1,8 @@
 #include "PmergeMe.hpp"
-#include <exception>
-#include <cstring>
-#include <cctype>
 
 // split in pairs, compare all pairs, grab biggest numbers and sort those merge sort way, 
 // place first pair's lowest in front of lowest high number
 // use the jacobsthal sequence to grab lower number of pairs
-// grab 2nd unsorted pair (5th pair), then 1st (4th pair), then very last number that isnt paired, then last pair then 2nd to last etc until done.
 
 // use vector and list for inserting better
 
@@ -17,31 +13,13 @@
 // fourth line shows time it took to store and sort using the other container with its name
 PmergeMe::PmergeMe()
 {
+	std::cerr << "Please create a PmergeMe with a string\n";
+	std::exit(EXIT_FAILURE);
 }
 
-PmergeMe::PmergeMe(char** input)
+PmergeMe::PmergeMe(const std::string& input)
 {
-	PmergeMe	yep;
-	size_t		i = 1;
-	std::string	beforeSorting;
-
-	while (input[i])
-	{
-		for (size_t	j = 0; j < std::strlen(input[i]); j++)
-		{
-			if (!std::isdigit(input[i][j]))
-			{
-				std::cout << "Please only use numbers!\n";
-				std::exit(EXIT_FAILURE);
-			}
-			beforeSorting.push_back(input[i][j]);
-		}
-		beforeSorting += " ";
-		i++;
-	}
-	if (!beforeSorting.empty())
-		beforeSorting.pop_back();
-	std::cout << "Before sorting: " << beforeSorting << '\n';
+	std::cout << "Before sorting: " << input << '\n';
 	// while (input[i])
 	// {
 	// 	try
