@@ -14,6 +14,7 @@ NAME= PmergeMe
 CC= c++
 CFLAGS= -Wall -Werror -Wextra -std=c++11
 SRCS= main.cpp \
+mergeSorts.cpp \
 PmergeMe.cpp
 
 OBJS= ${SRCS:%.cpp=%.o}
