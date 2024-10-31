@@ -24,13 +24,13 @@ unsigned long long jacobsthal(int n)
 	return (jacobsthal(n - 1) + (2 * jacobsthal(n - 2)));
 }
 
-void	mergeInsertionVec(std::vector<int>& higher, std::vector<int>& lower)
-{
-	std::cout << jacobsthal(4) << '\n';
-	// do the stuff here
-}
+// void	mergeInsertionVec(std::vector<int>& higher, std::vector<int>& lower)
+// {
+// 	std::cout << jacobsthal(4) << '\n';
+// 	// do the stuff here
+// }
 
-void	mergeInsertionList(std::list<int>& higher, std::list<int>& lower)
-{
+// void	mergeInsertionList(std::list<int>& higher, std::list<int>& lower)
+// {
 
-}
+// }

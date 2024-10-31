@@ -9,12 +9,13 @@
 #include <cctype>
 #include <sstream>
 #include <climits>
+#include <iterator>
 
 unsigned long long	jacobsthal(int n);
 void				mergeInsertionVec(std::vector<int>& higher, std::vector<int>& lower);
 void				mergeInsertionList(std::list<int>& higher, std::list<int>& lower);
-void				mergeSortVec(std::vector<int>& vec, int left, int right);
-void				mergeSortList(std::list<int>& lst);
+void				mergeSortVec(std::vector<int>& higher, std::vector<int>& lower, int left, int right);
+void				mergeSortList(std::list<int>& higher, std::list<int>& lower);
 
 template <typename Container>
 class PmergeMe
@@ -38,6 +39,12 @@ class PmergeMe
 	{
 		std::cout << "After: ";
 		for (const int num : _higherNr)
+		{
+			std::cout << num << " ";
+		}
+		std::cout << '\n';
+		std::cout << "lower: ";
+		for (const int num : _lowerNr)
 		{
 			std::cout << num << " ";
 		}
