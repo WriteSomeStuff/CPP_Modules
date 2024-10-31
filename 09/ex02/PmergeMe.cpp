@@ -24,13 +24,32 @@ unsigned long long jacobsthal(int n)
 	return (jacobsthal(n - 1) + (2 * jacobsthal(n - 2)));
 }
 
-// void	mergeInsertionVec(std::vector<int>& higher, std::vector<int>& lower)
-// {
-// 	std::cout << jacobsthal(4) << '\n';
-// 	// do the stuff here
-// }
+int	compareValues(const std::vector<int>& higher, int lower)
+{
+	// compare lower to the middle of higher, split in halves every time if lower or higher until found where belongs
+	return (1); // return (index to place at);
+}
 
-// void	mergeInsertionList(std::list<int>& higher, std::list<int>& lower)
-// {
+void	mergeInsertionVec(std::vector<int>& higher, std::vector<int>& lower)
+{
+	int	lastPlaced = 0;
+	int	current = 2;
+	int	next = 3;
+	higher.insert(higher.begin(), lower.front());
+	std::cout << "Index to grab: " << jacobsthal(next) - 1 << '\n';
+	while (1)
+	{
+		current = jacobsthal(next) - 1;
+		lastPlaced = compareValues(higher, lower.at(current));
+		// place value at found index
+		if (jacobsthal(next) >= lower.size())
+			break ;
+	}
+	// empty last elements until last inserted index
+}
 
-// }
+void	mergeInsertionList(std::list<int>& higher, std::list<int>& lower)
+{
+	higher.insert(higher.begin(), lower.front());
+
+}

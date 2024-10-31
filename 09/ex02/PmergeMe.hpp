@@ -43,12 +43,6 @@ class PmergeMe
 			std::cout << num << " ";
 		}
 		std::cout << '\n';
-		std::cout << "lower: ";
-		for (const int num : _lowerNr)
-		{
-			std::cout << num << " ";
-		}
-		std::cout << '\n';
 	}
 
 	PmergeMe() = delete;
