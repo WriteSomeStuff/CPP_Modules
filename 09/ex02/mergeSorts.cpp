@@ -1,5 +1,4 @@
 #include "PmergeMe.hpp"
-#include <algorithm>
 
 void mergeSortVec(std::vector<int>& higher, std::vector<int>& lower, int left, int right)
 {

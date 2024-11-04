@@ -63,17 +63,17 @@ int	main(int argc, char** argv)
 	// grab time for vec
 	PmergeMe<std::vector<int>> mergeVec(input);
 	mergeSortVec(mergeVec.getHigherNr(), mergeVec.getLowerNr(), 0, mergeVec.getHigherNr().size() - 1);
-	mergeInsertionVec(mergeVec.getHigherNr(), mergeVec.getLowerNr());
+	mergeInsertion(mergeVec.getHigherNr(), mergeVec.getLowerNr());
 	// grab time to calculate how long sorting took
 	mergeVec.printSortedNumbers();
 
 	// grab time for list
 	PmergeMe<std::list<int>> mergeList(input);
 	mergeSortList(mergeList.getHigherNr(), mergeList.getLowerNr());
-	// mergeInsertionList(mergeList.getHigherNr(), mergeList.getLowerNr());
+	mergeInsertion(mergeList.getHigherNr(), mergeList.getLowerNr());
 	// grab time to calculate how long sorting took
+	mergeList.printSortedNumbers();
 
-	// mergeList.printSortedNumbers();
 	// std::cout << "Time to process with std::vector: " << time1 << "us\n";
 	// std::cout << "Time to process with std::list: " << time2 << "us\n";
 }

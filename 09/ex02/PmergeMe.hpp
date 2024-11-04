@@ -10,19 +10,46 @@
 #include <sstream>
 #include <climits>
 #include <iterator>
+#include <algorithm>
 
 unsigned long long	jacobsthal(int n);
-void				mergeInsertionVec(std::vector<int>& higher, std::vector<int>& lower);
-void				mergeInsertionList(std::list<int>& higher, std::list<int>& lower);
 void				mergeSortVec(std::vector<int>& higher, std::vector<int>& lower, int left, int right);
 void				mergeSortList(std::list<int>& higher, std::list<int>& lower);
+
+template<typename Container>
+void	findAndInsert(Container& higher, int lower)
+{
+	auto it = std::lower_bound(higher.begin(), higher.end(), lower);
+	higher.insert(it, lower);
+}
+
+template<typename Container>
+void	mergeInsertion(Container& higher, Container& lower)
+{
+	int	lastPlaced = 0;
+	int	current = 0;
+	int	next = 3;
+	higher.insert(higher.begin(), lower.front());
+	std::cout << "Index to grab: " << jacobsthal(next) - 1 << '\n';
+	while (static_cast<unsigned long>(current) < lower.size())
+	{
+		current = jacobsthal(next) - 1;
+		for (int i = std::min<int>(current, lower.size() - 1); i > lastPlaced; i--)
+		{
+			auto it = std::next(lower.begin(), i);
+			findAndInsert(higher, *it);
+		}
+		lastPlaced = current;
+		next++;
+	}
+}
 
 template <typename Container>
 class PmergeMe
 {
 	private:
 	Container	_higherNr;
-	Container	_lowerNr;	
+	Container	_lowerNr;
 
 	public:
 	Container&	getHigherNr()
