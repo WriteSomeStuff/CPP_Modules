@@ -1,4 +1,5 @@
 #include "PmergeMe.hpp"
+#include <chrono>
 
 void	rangeCheck(const std::string& input)
 {
@@ -51,29 +52,40 @@ const std::string	checkInput(char** input)
 
 int	main(int argc, char** argv)
 {
-	// time 1
-	// time 2
 	if (argc < 2)
 	{
 		std::cerr << "Wrong input, try ./PmergeMe 1 3 2\n";
 		return (EXIT_FAILURE);
 	}
-	const std::string	input = checkInput(argv);
+	const std::string input = checkInput(argv);
 
-	// grab time for vec
+	auto startVec = std::chrono::high_resolution_clock::now();
+
 	PmergeMe<std::vector<int>> mergeVec(input);
 	mergeSortVec(mergeVec.getHigherNr(), mergeVec.getLowerNr(), 0, mergeVec.getHigherNr().size() - 1);
 	mergeInsertion(mergeVec.getHigherNr(), mergeVec.getLowerNr());
-	// grab time to calculate how long sorting took
+
+	auto endVec = std::chrono::high_resolution_clock::now();
+	auto durationVec = std::chrono::duration_cast<std::chrono::microseconds>(endVec - startVec).count();
+
 	mergeVec.printSortedNumbers();
 
-	// grab time for list
+
+	auto startList = std::chrono::high_resolution_clock::now();
+
 	PmergeMe<std::list<int>> mergeList(input);
 	mergeSortList(mergeList.getHigherNr(), mergeList.getLowerNr());
 	mergeInsertion(mergeList.getHigherNr(), mergeList.getLowerNr());
-	// grab time to calculate how long sorting took
+
+	auto endList = std::chrono::high_resolution_clock::now();
+	auto durationList = std::chrono::duration_cast<std::chrono::microseconds>(endList - startList).count();
+
 	mergeList.printSortedNumbers();
 
-	// std::cout << "Time to process with std::vector: " << time1 << "us\n";
-	// std::cout << "Time to process with std::list: " << time2 << "us\n";
+	if (std::is_sorted(mergeVec.getHigherNr().begin(), mergeVec.getHigherNr().end()) && std::is_sorted(mergeList.getHigherNr().begin(), mergeList.getHigherNr().end()))
+		std::cout << "It's sorted!\n";
+	else
+		std::cout << "It's ruined!\n";
+	std::cout << "Time to process with std::vector: " << durationVec << "us\n";
+	std::cout << "Time to process with std::list: " << durationList << "us\n";
 }

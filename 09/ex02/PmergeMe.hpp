@@ -29,8 +29,8 @@ void	mergeInsertion(Container& higher, Container& lower)
 	int	lastPlaced = 0;
 	int	current = 0;
 	int	next = 3;
+
 	higher.insert(higher.begin(), lower.front());
-	std::cout << "Index to grab: " << jacobsthal(next) - 1 << '\n';
 	while (static_cast<unsigned long>(current) < lower.size())
 	{
 		current = jacobsthal(next) - 1;
