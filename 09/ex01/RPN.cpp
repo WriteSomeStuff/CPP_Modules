@@ -8,8 +8,8 @@ RPN::RPN()
 
 RPN::RPN(const std::string& str) : _input(str)
 {
-	float			nr1;
-	float			nr2;
+	float	nr1;
+	float	nr2;
 
 	for (size_t i = 0; i < str.size(); i++)
 	{
@@ -47,7 +47,7 @@ RPN::RPN(const std::string& str) : _input(str)
 			_stack.push(nr1);
 		}
 	}
-	float	result = _stack.top();
+	float result = _stack.top();
 	_stack.pop();
 	if (_stack.size() != 0)
 	{
