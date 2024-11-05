@@ -8,14 +8,14 @@ RPN::RPN()
 
 RPN::RPN(const std::string& str) : _input(str)
 {
-	int			nr1;
-	int			nr2;
+	float			nr1;
+	float			nr2;
 
 	for (size_t i = 0; i < str.size(); i++)
 	{
 		if (std::isdigit(str[i]))
 		{
-			int	number = str[i] - '0';
+			float	number = str[i] - '0';
 			_stack.push(number);
 		}
 		else
@@ -36,11 +36,18 @@ RPN::RPN(const std::string& str) : _input(str)
 			if (str[i] == '*')
 				nr1 *= nr2;
 			if (str[i] == '/')
+			{
+				if (nr2 == 0)
+				{
+					std::cerr << "Can't divide by 0\n";
+					std::exit(EXIT_FAILURE);
+				}
 				nr1 /= nr2;
+			}
 			_stack.push(nr1);
 		}
 	}
-	int	result = _stack.top();
+	float	result = _stack.top();
 	_stack.pop();
 	if (_stack.size() != 0)
 	{

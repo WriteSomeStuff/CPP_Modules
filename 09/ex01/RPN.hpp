@@ -8,8 +8,8 @@
 class RPN
 {
 	private:
-	std::stack<int>	_stack;
-	std::string		_input;
+	std::stack<float>	_stack;
+	std::string			_input;
 
 	public:
 	RPN();
