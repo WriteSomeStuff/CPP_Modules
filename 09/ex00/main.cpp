@@ -11,7 +11,7 @@ void	findExchangeRate(const std::string& str, const BitcoinExchange& database)
 	if (str.substr(10, 3) != " | ")
 		throw std::invalid_argument("");
 	value = std::stod(str.substr(13));
-	if (value < 0 || value > 2147483647.0)
+	if (value < 0 || value > 1000)
 		throw std::out_of_range("");
 	std::map<std::string, double>::const_iterator it = database.getIterator(date);
 	std::cout << date << " => " << value << " = " << value * it->second << '\n';
