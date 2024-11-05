@@ -31,11 +31,16 @@ const std::string	checkInput(char** input)
 
 	while (input[i])
 	{
+		if (!input[i][0])
+		{
+			std::cerr << "Please don't use empty strings :(\n";
+			std::exit(EXIT_FAILURE);
+		}
 		for (size_t	j = 0; j < std::strlen(input[i]); j++)
 		{
 			if (!std::isdigit(input[i][j]) && input[i][j] != ' ')
 			{
-				std::cout << "Please only use positive numbers!\n";
+				std::cerr << "Please only use positive numbers!\n";
 				std::exit(EXIT_FAILURE);
 			}
 			beforeSorting.push_back(input[i][j]);
