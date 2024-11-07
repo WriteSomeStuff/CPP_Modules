@@ -48,6 +48,12 @@ const std::string	checkInput(char** input)
 		beforeSorting += " ";
 		i++;
 	}
+	if (std::all_of(beforeSorting.begin(), beforeSorting.end(), [](unsigned char c) \
+		{ return std::isspace(c); }))
+	{
+		std::cerr << "Please don't use empty strings :(\n";
+		std::exit(EXIT_FAILURE);
+	}
 	if (!beforeSorting.empty())
 		beforeSorting.pop_back();
 	rangeCheck(beforeSorting);
